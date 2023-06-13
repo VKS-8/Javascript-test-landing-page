@@ -11,8 +11,8 @@
   <nav>
     <ul class="nav-links">
     <img src="images/benigno-hoyuela-AqX_786_G0g-unsplash-transparent-background-edgeSmudge.png">
-    <a href="#main-content" class="skip-link">Skip to Main Content</a>
-    <a href="#section1" class="skip-link">Skip to Section 1</a>
+    <a href="#main-content" class="skipLink skipLink1">Skip to<br>Main Content</a>
+    <a href="#section1" class="skipLink skipLink2">Skip to<br>Section 1</a>
     <li>
       <a href="#section1">Section 1</a>
     </li>
@@ -28,11 +28,21 @@
       <!-- Navigation links will be dynamically populated -->
     </ul>
   </nav>
-  <img src="images/james-todd-cropped.png">
+  <div>
+    <div id="heroImage">
+      <img src="images/james-todd-cropped-bottom-side.png">
+    </div>
+    <div id="heroText">
+      <h1>Welcome to an Extraordinary Adventure!</h1>
+      <p>
+        Embark on an exhilarating journey with "The Chronicles of Two Realms," an enthralling young adult novel that will transport you to a world brimming with excitement, friendship, and the boundless possibilities of youth. Join two extraordinary boys as they set out on an unforgettable quest that will test their courage, ignite their imaginations, and redefine the meaning of true friendship.
+      </p>
+    </div>
+  </div>
 </header>
   <main id="main-content">
-    <button id="section-nav" 
-    <aside class="section-nav" class="hidden">
+    <button id="toggleAsideBtn" class="toggleAsideBtn">></button>
+    <aside id="sectionNav" class="sectionNav" class="show-aside">
       <ul class="section-links">
         <li>
           <a href="#section1">Section 1</a>
@@ -51,33 +61,36 @@
     </aside>
 
     <section id="section1" class="odd-section">
-      <div class="flex-container">
-        <div class="image-container">
+      <div class="flexContainer">
+        <div class="imageContainer">
           <img src="" alt="Section 1 Image">
         </div>
-        <div class="text-container">
-          <h2>Welcome to an Extraordinary Adventure!</h2>
+        <div class="textContainer">
+          <h2>In this gripping tale</h2>
           <p>
-            Embark on an exhilarating journey with "The Chronicles of Two Realms," an enthralling young adult novel that will transport you to a world brimming with excitement, friendship, and the boundless possibilities of youth. Join two extraordinary boys as they set out on an unforgettable quest that will test their courage, ignite their imaginations, and redefine the meaning of true friendship.</p>
+            In this gripping tale of adventure, mystery, and self-discovery, you'll meet Alex and Ben, two unlikely companions who stumble upon a hidden gateway to a parallel realm. As they step through the threshold, a realm of wonders unfolds before their eyes—a realm filled with mythical creatures, enchanted landscapes, and ancient secrets waiting to be unveiled.
+
+            Guided by their insatiable curiosity and an unbreakable bond, Alex and Ben navigate through perilous trials and encounter captivating characters along the way. Together, they must unravel the mysteries of this enchanting realm, confront their deepest fears, and unearth their hidden potential. Will they have what it takes to overcome the challenges that lie ahead and fulfill their destinies?
+          </p>
         </div>
       </div>
     </section>
 
     <section id="section2">
-      <div class="text-overlay">
-        <div class="text-container">
-          <h2>Section 2</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam saepe rerum, inventore sapiente magnam qui dolores quo nemo excepturi soluta mollitia repudiandae quibusdam voluptatibus nam tempora, dolor non reprehenderit deserunt accusamus! Dolores quidem numquam itaque nulla quaerat, reiciendis eos tenetur quisquam dolor neque, necessitatibus a quas exercitationem ut blanditiis. Harum incidunt cupiditate minus sunt nostrum, facilis ipsa quo aliquam consequuntur minima atque nam similique explicabo maiores dolore illo repellat ex aperiam fugiat? Fuga pariatur illum voluptates nam asperiores quidem, minus accusantium quibusdam. Quos inventore sint iure ullam? Illum ipsa harum sunt dolor cum esse molestias molestiae exercitationem, quam a dolorum aliquid inventore incidunt eveniet maxime culpa facere libero quos officia quis modi doloremque aspernatur! Laudantium a deleniti voluptatibus, porro quos beatae aperiam delectus ea ipsam, officiis impedit! Impedit temporibus modi adipisci incidunt harum voluptatum natus itaque officiis odio eos, quibusdam maxime nesciunt quasi quaerat, ad sunt obcaecati sit inventore!</p>
+      <div class="textOverlay">
+        <div class="textContainer">
+          <h2>"The Chronicles of Two Realms"</h2>
+          <p>...is not merely a tale of adventure—it's a celebration of the indomitable spirit of youth and the power of friendship. As you turn the pages, you'll be swept away by the palpable sense of wonder and the exhilarating pace of the narrative. The vivid descriptions will paint a picture in your mind, allowing you to lose yourself in the magic of the story.</p>
         </div>
       </div>
     </section>
 
     <section id="section3" class="odd-section hideSection">
-      <div class="flex-container">
-        <div class="image-container">
+      <div class="flexContainer">
+        <div class="imageContainer">
           <img src="images/art-lasovsky-8XddFc6NkBY-unsplash-transparent-background-80%-opacity.png" alt="Section 3 Image">
         </div>
-        <div class="text-container">
+        <div class="textContainer">
           <h2>Section 3</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam saepe rerum, inventore sapiente magnam qui dolores quo nemo excepturi soluta mollitia repudiandae quibusdam voluptatibus nam tempora, dolor non reprehenderit deserunt accusamus! Dolores quidem numquam itaque nulla quaerat, reiciendis eos tenetur quisquam dolor neque, necessitatibus a quas exercitationem ut blanditiis. Harum incidunt cupiditate minus sunt nostrum, facilis ipsa quo aliquam consequuntur minima atque nam similique explicabo maiores dolore illo repellat ex aperiam fugiat? Fuga pariatur illum voluptates nam asperiores quidem, minus accusantium quibusdam. Quos inventore sint iure ullam? Illum ipsa harum sunt dolor cum esse molestias molestiae exercitationem, quam a dolorum aliquid inventore incidunt eveniet maxime culpa facere libero quos officia quis modi doloremque aspernatur! Laudantium a deleniti voluptatibus, porro quos beatae aperiam delectus ea ipsam, officiis impedit! Impedit temporibus modi adipisci incidunt harum voluptatum natus itaque officiis odio eos, quibusdam maxime nesciunt quasi quaerat, ad sunt obcaecati sit inventore!</p>
         </div>
@@ -85,8 +98,8 @@
     </section>
 
     <section id="section4" class="hideSection">
-      <div class="text-overlay">
-        <div class="text-container">
+      <div class="textOverlay">
+        <div class="textContainer">
           <h2>Section 4</h2>
           <p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laboriosam saepe rerum, inventore sapiente magnam qui dolores quo nemo excepturi soluta mollitia repudiandae quibusdam voluptatibus nam tempora, dolor non reprehenderit deserunt accusamus! Dolores quidem numquam itaque nulla quaerat, reiciendis eos tenetur quisquam dolor neque, necessitatibus a quas exercitationem ut blanditiis. Harum incidunt cupiditate minus sunt nostrum, facilis ipsa quo aliquam consequuntur minima atque nam similique explicabo maiores dolore illo repellat ex aperiam fugiat? Fuga pariatur illum voluptates nam asperiores quidem, minus accusantium quibusdam. Quos inventore sint iure ullam? Illum ipsa harum sunt dolor cum esse molestias molestiae exercitationem, quam a dolorum aliquid inventore incidunt eveniet maxime culpa facere libero quos officia quis modi doloremque aspernatur! Laudantium a deleniti voluptatibus, porro quos beatae aperiam delectus ea ipsam, officiis impedit! Impedit temporibus modi adipisci incidunt harum voluptatum natus itaque officiis odio eos, quibusdam maxime nesciunt quasi quaerat, ad sunt obcaecati sit inventore!</p></p>
         </div>

@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Get the aside element
-  const aside = document.getElementById('section-nav');
+  const aside = document.getElementById('sectionNav');
 
   // Function to toggle the aside visibility
   function toggleAside() {
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Add an event listener to the button that triggers the aside toggle
-  const toggleButton = document.getElementById('toggle-aside-btn');
+  const toggleButton = document.getElementById('toggleAsideBtn');
   toggleButton.addEventListener('click', toggleAside);
 
   // Add event listener to toggle the active state of section navigation links
