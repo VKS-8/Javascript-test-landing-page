@@ -77,13 +77,14 @@ header img {
 
 nav img {
   height: 6.5rem;
+  max-width: 1600px;
   padding:0;
   margin: -2rem 0 -3rem -2.25rem;
 }
 
 nav {
   height: 15vh;
-  width: 100%;
+  width: 99.25%;
   position: fixed;
   z-index: 10;
   margin: 0;
@@ -130,8 +131,6 @@ nav {
     outline: none;
   }
 
-
-
 /* Styles for the slide-in aside */
 .toggleAsideBtn {
   position: fixed;
@@ -165,12 +164,13 @@ nav {
 /* Default styles for the aside */
 aside {
   position: fixed;
-  top: 0;
+  top: 17vh;
   bottom: 0;
-  z-index: 5;
-  right: -250px; /* initial position*/
+  left: 250px;
   width: 250px;
-  transition: right 0.3s ease-in-out;
+  font-size: 2rem;
+  background-color: rgba(225, 165, 0, 0.8);
+  transition: left 0.3s ease-in-out;
 }
 
 /* Show the aside */
@@ -183,7 +183,7 @@ aside {
   display: none;
 }
 
-.sectionNav {
+/* .sectionNav {
   position: fixed;
   top: 17vh;
   bottom: 0;
@@ -192,7 +192,7 @@ aside {
   font-size: 2rem;
   background-color: rgba(225, 165, 0, 0.8);
   transition: left 0.3s ease-in-out;
-}
+} */
 
 .sectionNav.open {
   left: 0;
