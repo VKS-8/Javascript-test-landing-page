@@ -133,10 +133,10 @@ nav {
   }
 
 /* Styles for the slide-in aside */
-.toggleAsideBtn {
-  position: fixed;
-  top: 10rem;
-  left: 0rem;
+#toggleAsideBtn {
+  position: relative;
+  top: 5rem;
+  left: 250px;
   height: 3rem;
   width: 3rem;
   background:rgba(0, 0, 0, 0.2);
@@ -150,16 +150,32 @@ nav {
   cursor: pointer;
 }
 
-.toggleAsideBtn:hover {
+#toggleAsideBtn:hover {
   background: #808080;
   color: #ffc0cb;
 }
 
-.toggleAsideBtn:focus {
+#toggleAsideBtn:focus {
   outline: none;
   border: 2px solid #674401;
   border-left: none;
   color: #fcc35a;
+}
+
+.asideOpened {
+  left: 250px;
+  transition: right 0.3s ease-in-out;
+}
+
+.openClose {
+  @keyframes rotateAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 /* Default styles for the aside */
@@ -178,26 +194,6 @@ aside {
 .showAside {
   left: 0;
 }
-
-/* Hide the aside */
-/* .hidden {
-  display: none;
-} */
-
-/* .sectionNav .open {
-  position: fixed;
-  top: 17vh;
-  bottom: 0;
-  left: -250px;
-  width: 250px;
-  font-size: 2rem;
-  background-color: rgba(225, 165, 0, 0.8);
-  transition: right 0.3s ease-in-out;
-} */
-
-/* aside .open {
-  left: 0;
-} */
 
 /* Styles for navigation links and section links */
 .nav-links,

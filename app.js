@@ -38,17 +38,26 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', handleSmoothScroll);
   });
 
+
+
+
+
+
   // Get the aside element
   const aside = document.getElementById('aside');
 
   // Function to toggle the aside visibility
   function toggleAside() {
-    aside.classList.toggle('showAside');
+
+      aside.classList.toggle('showAside');
+      toggleAsideButton.classList.toggle('asideOpened openClose');
+
+      // toggleAsideButton.addEventListener('click', toggleRotation);
     }
 
-  // Add an event listener to the button that triggers the aside toggle
-  const toggleButton = document.getElementById('toggleAsideBtn');
-  toggleButton.addEventListener('click', toggleAside);
+  // Add an event listener to the button that triggers the aside to open via toggle
+  const toggleAsideButton = document.getElementById('toggleAsideBtn');
+  toggleAsideButton.addEventListener('click', toggleAside);
 
   // Add event listener to toggle the active state of section navigation links
   window.addEventListener('scroll', () => {
