@@ -95,6 +95,7 @@ nav {
 
   nav ul {
     display: flex;
+    justify-content: flex-end;
     margin: 1rem;
   }
 
@@ -166,7 +167,7 @@ aside {
   position: fixed;
   top: 17vh;
   bottom: 0;
-  left: 250px;
+  left: -250px;
   width: 250px;
   font-size: 2rem;
   background-color: rgba(225, 165, 0, 0.8);
@@ -175,15 +176,15 @@ aside {
 
 /* Show the aside */
 .showAside {
-  right: 0;
+  left: 0;
 }
 
 /* Hide the aside */
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
-/* .sectionNav {
+/* .sectionNav .open {
   position: fixed;
   top: 17vh;
   bottom: 0;
@@ -191,12 +192,12 @@ aside {
   width: 250px;
   font-size: 2rem;
   background-color: rgba(225, 165, 0, 0.8);
-  transition: left 0.3s ease-in-out;
+  transition: right 0.3s ease-in-out;
 } */
 
-.sectionNav.open {
+/* aside .open {
   left: 0;
-}
+} */
 
 /* Styles for navigation links and section links */
 .nav-links,

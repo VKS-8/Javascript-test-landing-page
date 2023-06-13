@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Function to toggle the aside visibility
   function toggleAside() {
     aside.classList.toggle('showAside');
-  }
+    }
 
   // Add an event listener to the button that triggers the aside toggle
   const toggleButton = document.getElementById('toggleAsideBtn');
