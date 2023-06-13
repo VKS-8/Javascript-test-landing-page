@@ -56,7 +56,7 @@ header img {
   border: 2px solid #fcc35a;
   padding: 1rem;
   font-size: 1.10rem;
-  box-shadow: -2px -4px -5px rgba(10, 0, 0, 0.3);
+  box-shadow: 2px 4px 5px rgba(232, 219, 219, 0.7);
 }
 
 .skipLink1:hover {
@@ -109,6 +109,12 @@ nav {
 
   nav ul li a:hover {
     border-bottom: 5px solid #ffa500;
+  }
+
+  nav ul li a:active {
+    background:rgba(143, 143, 143, 0.3)
+    border-bottom: 5px solid #ffa500;
+    offSet-y: 2rem;
   }
 
 
@@ -211,6 +217,8 @@ aside {
 section {
   position: relative;
   height: 82vh;
+  padding-top: 17vh; /* Prevents sections from appearing behind nav when link is clicked */
+  /*TODO may be able to do in js with an offset*/
 }
 
 .textContainer h2 {
