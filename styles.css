@@ -26,6 +26,7 @@ h1 {
 header {
   position: relative;
   height: 100vh;
+  max-width: 1600px;
   background: pink;
 }
 
@@ -77,9 +78,8 @@ header img {
 
 nav img {
   height: 6.5rem;
-  max-width: 1600px;
   padding:0;
-  margin: -2rem 0 -3rem -2.25rem;
+  margin: -2rem 0 -3rem -3.25rem;
 }
 
 nav {
