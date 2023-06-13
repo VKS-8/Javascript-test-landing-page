@@ -39,11 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Get the aside element
-  const aside = document.getElementById('sectionNav');
+  const aside = document.getElementById('aside');
 
   // Function to toggle the aside visibility
   function toggleAside() {
-    aside.classList.toggle('show-aside');
+    aside.classList.toggle('showAside');
   }
 
   // Add an event listener to the button that triggers the aside toggle
