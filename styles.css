@@ -114,14 +114,14 @@ nav {
     border-bottom: 5px solid #ffa500;
   }
 
-  nav ul li a:active {
+  nav ul li a.active {
     border-left: 2px solid #ffa500;
     border-top: 2px solid #ffa500;
     border-right: 2px solid #ffa500;
     border-bottom: 5px solid #ffa500;
   }
 
-  nav ul li a:focus {
+  nav ul li a.focus {
     border-left: 2px solid #ffa500;
     border-top: 2px solid #ffa500;
     border-right: 2px solid #ffa500;
@@ -211,8 +211,7 @@ aside {
   padding: 0.25rem;
 }
 
-.navLinks a.active,
-.asideLinks a.active {
+.navLinks a.active {
   border-left: 2px solid #ffa500;
   border-top: 2px solid #ffa500;
   border-right: 2px solid #ffa500;
