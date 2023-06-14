@@ -346,3 +346,12 @@ section:nth-child(even) {
   line-height: 1.75rem;
   background: rgba(0, 0, 0, 0.2);
 }
+
+#section4img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: content;
+  width: 90%;
+ margin: 0;
+}
