@@ -334,9 +334,42 @@ section:nth-child(even) {
 }
 
 .imageContainer {
-  flex-basis: 40% ;
+  flex-basis: 40%;
+  height: 100%;
+  width: 100%;
   padding: 20px;
   background: #ffa500;
+}
+
+
+#bookTitle {
+  display: none;
+  position: absolute;
+  top: -15rem;
+  left: 5rem;
+  padding: 2rem;
+  font-size: 11rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.capitalLetter {
+  font-size: 20rem;
+}
+
+span #titleFormat {
+  position: relative;
+  top: -8rem;
+  left: 10rem;
+}
+
+/* #openingQuoteMrk {
+  position: relative;
+  top: 0;
+  left: 0;
+} */
+
+.quoteMark {
+  font-size: 20rem;;
 }
 
 .textContainer {
