@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Populate the navigation links dynamically
   const topNav = document.querySelector('#topNav');
   const topNavLink = document.createElement('a');
-  topNavLink.href = `#${sectionId}`;
+  topNavLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
   topNavLink.textContent = sectionTitle;
   topNav.appendChild(topNavLink);
 
@@ -12,9 +12,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // Populate the aside navigation links dynamically
   const asideNav = document.querySelector('#aside');
   const asideNavLink = document.createElement('a');
-  asideNavLink.href = `#${sectionId}`;
+  asideNavLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
   asideNavLink.textContent = sectionTitle;
   asideNav.appendChild(asideNavLink);
+
+  // Update the nav dropdown in the top navigation
+  function updateDropdown(sectionTitle) {
+    const dropdownMenu = document.querySelector('#topNavDropdown');
+    dropdownItem.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
+    droptdownItem.textContent = sectionTitle;
+
+  // Append the dropdown item to the dropdown menu
+  dropdownMenu.appendChild(dropdownItem);
+}
 
 
 
@@ -75,8 +85,8 @@ function setActive() {
   toggleAsideButton.addEventListener('click', toggleAside);
 
   // Function to append a new section to the page
-  function appendSection(sectionId, sectionTitle, sectionContent, sectionImage) {
-    const sectionContainer = document.querySelector('div');
+  function appendSection(sectionTitle, sectionContent, sectionImage) {
+    const sectionContainer = document.querySelector('#sectionContainer');
 
   // Create the section title
   const title = document.createElement('h2');
@@ -96,8 +106,7 @@ function setActive() {
   }
 
   // Append the new section to the main element
-  const sectionContainer = document.querySelector('#sectionContainer');
-  sectionContainer.appendChild(sectionContainer);
+  sectionContainer.appendChild(section);
   }
 
   // Handle form submission
@@ -108,10 +117,9 @@ function setActive() {
     const sectionContentInput = document.querySelector('#sectionContent');
     const sectionImageInput = document.querySelector('#sectionImage');
 
-    const sectionId = sectionIdInput.ariaValueMax;
-    const sectionTitle = sectionTitleInput.ariaValueMax;
-    const sectionContent = sectionContentInput.ariaValueMax;
-    const sectionimage = null;
+    const sectionTitle = sectionTitleInput.value;
+    const sectionContent = sectionContentInput.value;
+    const sectionImage = null;
 
     if (sectionImageInput.files && sectionImageInput.files[0]) {
       const reader = new FileReader();
