@@ -194,27 +194,32 @@ aside {
 
 /* Styles for navigation links and section links */
 .navLinks,
-.section-links {
+.asideLinks {
   list-style: none;
   padding: 2rem;
 }
 
 .navLinks li,
-.section-links li {
+.asideLinks li {
   margin-bottom: 1rem;
 }
 
-.sectionLinks a {
-  color: rgb(54, 36, 1);
+.asideLinks a {
+  color: #5e4007;
   text-decoration: none;
+  padding: 0.25rem;
 }
 
 .navLinks a.active,
-.sectionLinks a.active {
+.asideLinks a.active {
   border-left: 2px solid #ffa500;
   border-top: 2px solid #ffa500;
   border-right: 2px solid #ffa500;
   border-bottom: 5px solid #ffa500;
+}
+
+.asideLinks a.active {
+  border: 2px solid #5e4007;
 }
 
 /* Add styles for the scroll-to-top button */
