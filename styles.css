@@ -335,7 +335,7 @@ section:nth-child(3) {
 
 #section4 img {
   position: absolute;
-  top: 0;
+  top: 8rem;
   left: 0;
   object-fit: content;
   width: 90%;
