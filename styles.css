@@ -106,7 +106,7 @@ nav {
     font-size: 1.5rem;
     align-items: center;
     border-radius: 10px 10px 0 0;
-    border: 1px solid red;
+
   }
 
   nav ul li a:hover {
@@ -311,7 +311,7 @@ section:nth-child(3) {
 
 #section4 .textOverlay {
   position: relative;
-  top: -15rem;
+  top: -8rem;
   left: 60rem;
   height: 85vh;
   width: 500px;
