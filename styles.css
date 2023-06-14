@@ -305,6 +305,50 @@ section:nth-child(3) {
   padding: 15rem 0 0;
 }
 
+#section4 .textContainer {
+  height: 100%;
+}
+
+#section4 .textOverlay {
+  position: relative;
+  top: -15rem;
+  left: 60rem;
+  height: 85vh;
+  width: 500px;
+  padding: 5rem auto;
+  background:rgba(0, 0, 0, 0.45)
+}
+
+#section4 h2 {
+  position: relative;
+  top: 8rem;
+}
+
+#section4 p {
+  position: relative;
+  top: 10rem;
+  height: 50rem;
+  margin: 2rem;
+  padding: 0;
+  text-align: start;
+}
+
+#section4 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: content;
+  width: 90%;
+ margin: 0;
+}
+
+.textContainer {
+  text-align: start;
+  flex-basis: 70% ;
+  line-height: 1.75rem;
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .textOverlay {
   position: relative;
   top: 0;
@@ -336,7 +380,6 @@ section:nth-child(3) {
   background: #ffa500;
 }
 
-
 #bookTitle {
   display: none;
   position: absolute;
@@ -357,28 +400,40 @@ span #titleFormat {
   left: 10rem;
 }
 
-/* #openingQuoteMrk {
-  position: relative;
-  top: 0;
-  left: 0;
-} */
-
 .quoteMark {
   font-size: 20rem;;
 }
 
-.textContainer {
-  text-align: start;
-  flex-basis: 70% ;
-  line-height: 1.75rem;
+#cta {
+  display: block;
+  position: absolute;
+  top: 11rem;
+  left: -8rem;
+  height: 15rem;
+  width: 50rem;
+  font-size: 3rem;
   background: rgba(0, 0, 0, 0.2);
 }
 
-#section4img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: content;
-  width: 90%;
- margin: 0;
+#cta .capitalLetter {
+  font-size: 7rem;
 }
+
+#ctaTitleFormat {
+  position: absolute;
+  top: 5rem;
+  left: 7rem;
+}
+
+#cta .quoteMark {
+  font-size: 7rem;;
+}
+
+#ctaCloseQuote {
+  position: absolute;
+  top: 5rem;
+  left: 28.5rem;
+}
+
+
+
