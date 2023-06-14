@@ -2,24 +2,23 @@ document.addEventListener('DOMContentLoaded', function() {
   const section = []
 
   // Populate the navigation links dynamically
-  const navLinksContainer = document.querySelector('.navLinks');
-  // Populate the navLinksContainer with navigation links
-  // Function to create navigation links
-  function createNavLink(element) {
-    const li = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = '#' + element;
-    link.textContent = element;
-    li.appendChild(link);
-    navList.appendChild(li);
-  }
+  const topNav = document.querySelector('#topNav');
+  const topNavLink = document.createElement('a');
+  topNavLink.href = `#${sectionId}`;
+  topNavLink.textContent = sectionTitle;
+  topNav.appendChild(topNavLink);
 
 
-  // Populate the section navigation links dynamically
-  const sectionLinksContainer = document.querySelector('.asideLinks');
-  // Add code to populate the sectionLinksContainer with section navigation links
+  // Populate the aside navigation links dynamically
+  const asideNav = document.querySelector('#aside');
+  const asideNavLink = document.createElement('a');
+  asideNavLink.href = `#${sectionId}`;
+  asideNavLink.textContent = sectionTitle;
+  asideNav.appendChild(asideNavLink);
 
 
+
+// Set active state on sections as they scroll into view
 window.addEventListener('scroll', setActive);
 
 setActive();
@@ -74,6 +73,65 @@ function setActive() {
   // Add an event listener to the button that triggers the aside to open via toggle
   const toggleAsideButton = document.getElementById('toggleAsideBtn');
   toggleAsideButton.addEventListener('click', toggleAside);
+
+  // Function to append a new section to the page
+  function appendSection(sectionId, sectionTitle, sectionContent, sectionImage) {
+    const sectionContainer = document.querySelector('div');
+
+  // Create the section title
+  const title = document.createElement('h2');
+  title.textContent = sectionTitle;
+  sectionContainer.appendChild(title);
+
+  // Create the section content
+  const content = document.createElement('p');
+  content.textContent = `This is the content of ${sectionTitle.toLowerCase()}.`;
+  sectionContainer.appendChild(content);
+
+  // Create an image element
+  if (sectionImage) {
+    const image = document.createElement('img');
+    image.src = sectionImage;
+    sectionContainer.appendChild(image);
+  }
+
+  // Append the new section to the main element
+  const sectionContainer = document.querySelector('#sectionContainer');
+  sectionContainer.appendChild(sectionContainer);
+  }
+
+  // Handle form submission
+  document.querySelector('#sectionForm').addEventListener('submit', function(event ) {
+    event.preventDefault();
+
+    const sectionTitleInput = document.querySelector('#sectionTitle');
+    const sectionContentInput = document.querySelector('#sectionContent');
+    const sectionImageInput = document.querySelector('#sectionImage');
+
+    const sectionId = sectionIdInput.ariaValueMax;
+    const sectionTitle = sectionTitleInput.ariaValueMax;
+    const sectionContent = sectionContentInput.ariaValueMax;
+    const sectionimage = null;
+
+    if (sectionImageInput.files && sectionImageInput.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        sectionImage = e.target.result;
+        // Call the appendSection function with the user-provided section ID, title, content, and image
+        appendSection(sectionId, sectionTitle, sectionContent, sectionImage);
+      };
+      reader.readAsDataURL(sectionImageInput.files[0]);
+    } else {
+        //Call the appendSection function with the user-provided section ID, title, content
+        appendSection(sectionId, sectionTitle, sectionContent, sectionImage);
+    }
+
+    // Clear the form inputs
+    sectionIdInput.value = '';
+    sectionTitleInput.value = '';
+    sectionContentInput.value = '';
+    sectionImageInput.value = '';
+  });
 
   // Add event listener to toggle the active state of aside navigation links
   window.addEventListener('scroll', () => {
