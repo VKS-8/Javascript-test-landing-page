@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-  <nav>
+  <nav id="topNav">
     <ul class="navLinks">
     <img src="images/benigno-hoyuela-AqX_786_G0g-unsplash-transparent-background-edgeSmudge.png">
     <a href="#main-content" class="skipLink skipLink1">Skip to<br>Main Content</a>
@@ -100,14 +100,31 @@
     </section>
 
     <section id="section4" class="hideSection">
-      <img src="images\section4img_500px_334px.jpg" alt="son and mom reading an adventure story" id="section4img">
+      <img src="images/section4img_500px_334px-cropped-horizontally.jpg" alt="son and mom reading an adventure story" id="section4img">
       <div class="textOverlay">
         <div class="textContainer">
           <h2>Get Your Ticket to Adventure!</h2>
-          <p>Are you ready to embark on this extraordinary adventure? Grab a copy of "The Chronicles of Two Realms" today and let your imagination soar! </p>
+          <p>Are you ready to embark on this extraordinary adventure?
+            <br>
+            <br>
+             Grab your copy of<br>
+             <span id="cta"><span class="quoteMark">“</span><span class="capitalLetter">T</span>he Chronicles<br><span id="ctaTitleFormat">of Two Realms</span><span id="ctaCloseQuote" class="quoteMark">”</span></span></span>
+             <span class="spacer"><br><br><br><br><br><br></span>today and let your imagination soar!</p>
         </div>
       </div>
     </section>
+      <form id="sectionForm">
+        <label for="sectionTitle">Title Your Drawing!</label>
+        <input type="text" id="sectionTitle" required>
+        <label for="sectionContent">Tell us about your drawing!</label>
+        <textarea id="sectionContent" required></textarea>
+        <label for="sectionImage">Upload Your Drawing!</label>
+        <input type="file" id="sectionImage" accept="image/*">
+        <button type="submit">
+          Create<br>Post!
+        </button>
+      </form>
+    <div id="sectionContainer"></div>
   </main>
   <button id="scrollToTop" class="scrollToTopBtn" aria-label="scroll to top">^</button>
 </body>
