@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
   const section = []
+
   // Populate the navigation links dynamically
-  const navLinksContainer = document.querySelector('.nav-links');
+  const navLinksContainer = document.querySelector('.navLinks');
   // Populate the navLinksContainer with navigation links
   // Function to create navigation links
   function createNavLink(element) {
-    var li = document.createElement('li');
-    var link = document.createElement('a');
+    const li = document.createElement('li');
+    const link = document.createElement('a');
     link.href = '#' + element;
     link.textContent = element;
     li.appendChild(link);
@@ -15,8 +16,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Populate the section navigation links dynamically
-  const sectionLinksContainer = document.querySelector('.section-links');
+  const sectionLinksContainer = document.querySelector('.sectionLinks');
   // Add code to populate the sectionLinksContainer with section navigation links
+
+
+window.addEventListener('scroll', setActive);
+
+setActive();
+
+function setActive() {
+  const triggerBottom = window.innerHeight / 20 * 15;
+  const sections = document.querySelectorAll('section');
+
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if(sectionTop < triggerBottom) {
+      section.classList.add('active')
+    } else {
+      section.classList.remove('active');
+    }
+
+    // Additional check to remove the "active" class when the section is no longer in view
+    if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 0) {
+      section.classList.remove('active');
+    }
+  });
+}
 
   // Handle the smooth scrolling functionality
   function handleSmoothScroll(event) {
@@ -27,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Add event listeners to the navigation links for smooth scrolling
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navLinks = document.querySelectorAll('.navLinks a');
   navLinks.forEach(link => {
     link.addEventListener('click', handleSmoothScroll);
   });
 
   // Add event listeners to the section navigation links for smooth scrolling
-  const sectionLinks = document.querySelectorAll('.section-links a');
+  const sectionLinks = document.querySelectorAll('.sectionLinks a');
   sectionLinks.forEach(link => {
     link.addEventListener('click', handleSmoothScroll);
   });
@@ -66,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Add event listener to show/hide the scroll-to-top button
-  const scrollToTopBtn = document.getElementById('scroll-to-top');
+  const scrollToTopBtn = document.getElementById('scrollToTop');
   window.addEventListener('scroll', () => {
     // Add code to show/hide the scrollToTopBtn based on scroll position
   });

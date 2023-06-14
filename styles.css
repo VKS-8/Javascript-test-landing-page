@@ -110,11 +110,14 @@ nav {
   }
 
   nav ul li a:hover {
+    background:rgba(143, 143, 143, 0.3);
     border-bottom: 5px solid #ffa500;
   }
 
   nav ul li a:active {
-    background:rgba(143, 143, 143, 0.3);
+    border-left: 2px solid #ffa500;
+    border-top: 2px solid #ffa500;
+    border-right: 2px solid #ffa500;
     border-bottom: 5px solid #ffa500;
   }
 
@@ -190,29 +193,32 @@ aside {
 }
 
 /* Styles for navigation links and section links */
-.nav-links,
+.navLinks,
 .section-links {
   list-style: none;
   padding: 2rem;
 }
 
-.nav-links li,
+.navLinks li,
 .section-links li {
   margin-bottom: 1rem;
 }
 
-.section-links a {
+.sectionLinks a {
   color: rgb(54, 36, 1);
   text-decoration: none;
 }
 
-.nav-links a.active,
-.section-links a.active {
-  font-weight: bold;
+.navLinks a.active,
+.sectionLinks a.active {
+  border-left: 2px solid #ffa500;
+  border-top: 2px solid #ffa500;
+  border-right: 2px solid #ffa500;
+  border-bottom: 5px solid #ffa500;
 }
 
 /* Add styles for the scroll-to-top button */
-.scroll-to-top-btn {
+.scrollToTopBtn {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -258,10 +264,6 @@ section {
   text-align: justify;
 }
 
-section:nth-child(2) {
-
-}
-
 #section:nth-child(odd),
 #section:nth-child(even) {
   align-items: center;
@@ -281,10 +283,6 @@ section:nth-child(odd) p {
 }
 
 section:nth-child(odd) {
-
-}
-
-.odd-section {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -294,7 +292,6 @@ section:nth-child(even) h2 {
   color: #fcc35a;
 }
 
-
 section:nth-child(even) p {
   height: 40vh;
   padding: 2rem 2rem 3rem;
@@ -302,10 +299,6 @@ section:nth-child(even) p {
 }
 
 section:nth-child(even) {
-
-}
-
-.even-section {
   background-image: url('images/art-lasovsky-8XddFc6NkBY-unsplash-transparent-background-80%-opacity.png');
   background-size: cover;
   background-position: center;
