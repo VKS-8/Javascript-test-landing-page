@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // Populate the section navigation links dynamically
-  const sectionLinksContainer = document.querySelector('.sectionLinks');
+  const sectionLinksContainer = document.querySelector('.asideLinks');
   // Add code to populate the sectionLinksContainer with section navigation links
 
 
@@ -25,21 +25,17 @@ window.addEventListener('scroll', setActive);
 setActive();
 
 function setActive() {
-  const triggerBottom = window.innerHeight / 20 * 15;
+  // const triggerBottom = window.innerHeight / 20 * 19;
   const sections = document.querySelectorAll('section');
 
   sections.forEach(section => {
     const sectionTop = section.getBoundingClientRect().top;
 
-    if(sectionTop < triggerBottom) {
-      section.classList.add('active')
+    // Add and remove the "active" class when the section scrolls through view
+    if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
+      section.classList.remove('active');
     } else {
-      section.classList.remove('active');
-    }
-
-    // Additional check to remove the "active" class when the section is no longer in view
-    if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 0) {
-      section.classList.remove('active');
+      section.classList.add('active');
     }
   });
 }
@@ -58,9 +54,9 @@ function setActive() {
     link.addEventListener('click', handleSmoothScroll);
   });
 
-  // Add event listeners to the section navigation links for smooth scrolling
-  const sectionLinks = document.querySelectorAll('.sectionLinks a');
-  sectionLinks.forEach(link => {
+  // Add event listeners to the aside navigation links for smooth scrolling
+  const asideLinks = document.querySelectorAll('.asideLinks a');
+  asideLinks.forEach(link => {
     link.addEventListener('click', handleSmoothScroll);
   });
 
@@ -73,14 +69,13 @@ function setActive() {
       aside.classList.toggle('showAside');
       toggleAsideButton.classList.toggle('asideOpened openClose');
 
-      // toggleAsideButton.addEventListener('click', toggleRotation);
     }
 
   // Add an event listener to the button that triggers the aside to open via toggle
   const toggleAsideButton = document.getElementById('toggleAsideBtn');
   toggleAsideButton.addEventListener('click', toggleAside);
 
-  // Add event listener to toggle the active state of section navigation links
+  // Add event listener to toggle the active state of aside navigation links
   window.addEventListener('scroll', () => {
     if (isSectionVisible(section)) {
       link.setAttribute('aria-current', 'page');
