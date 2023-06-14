@@ -178,6 +178,7 @@ nav {
 /* Default styles for the aside */
 aside {
   position: fixed;
+  z-index: 3;
   top: 17vh;
   bottom: 0;
   left: -250px;
