@@ -38,11 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     link.addEventListener('click', handleSmoothScroll);
   });
 
-
-
-
-
-
   // Get the aside element
   const aside = document.getElementById('aside');
 

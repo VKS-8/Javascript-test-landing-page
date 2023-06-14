@@ -70,12 +70,6 @@ header img {
   margin: -1.5rem 0.45rem 1.5rem 0.37rem;
 }
 
-.skipLink2:hover {
-  padding: 1rem 0.5rem;
-  margin: -1.5rem 0.5rem 1.5rem 0.5rem;
-}
-
-
 nav img {
   height: 6.5rem;
   padding:0;
@@ -232,20 +226,44 @@ aside {
 
 section {
   position: relative;
-  height: 82vh;
-  padding-top: 17vh; /* Prevents sections from appearing behind nav when link is clicked */
+  height: 84vh;
+  padding-top: 20vh; /* Prevents sections from appearing behind nav when link is clicked */
   /*TODO may be able to do in js with an offset*/
+  align-items: center;
+
+}
+
+.textContainer:nth-child(odd) {
+  max-width: 1500px;
+  padding: 0 2rem 3rem;
+  margin: 15rem auto 0;
+}
+
+.textContainer:nth-child(even) {
+  max-width: 1500px;
+  padding: 0 2rem 3rem;
+
 }
 
 .textContainer h2 {
-  font-size: 600;
+  font-size: 2rem;
+
 }
 
 .textContainer p {
-  font-size: 500;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: justify;
 }
 
-#section1 {
+section:nth-child(2) {
+
+}
+
+#section:nth-child(odd),
+#section:nth-child(even) {
   align-items: center;
 }
 
@@ -262,12 +280,29 @@ section:nth-child(odd) p {
   color: #ffa500;
 }
 
-section:nth-child(even) {
-  height: 80vh;
+section:nth-child(odd) {
+
 }
 
 .odd-section {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+section:nth-child(even) h2 {
+  height: 3vh;
+  margin: -1rem 0 0;
+  color: #fcc35a;
+}
+
+
+section:nth-child(even) p {
+  height: 40vh;
+  padding: 2rem 2rem 3rem;
+  color: #ffa500;
+}
+
+section:nth-child(even) {
+
 }
 
 .even-section {
