@@ -246,19 +246,18 @@ section {
 
 .textContainer:nth-child(odd) {
   max-width: 1500px;
-  padding: 0 2rem 3rem;
-  margin: 15rem auto 0;
+  padding: 0 2rem;
+  margin: 0 auto;
 }
 
 .textContainer:nth-child(even) {
   max-width: 1500px;
   padding: 0 2rem 3rem;
-
+  margin: 0 auto;
 }
 
 .textContainer h2 {
   font-size: 2rem;
-
 }
 
 .textContainer p {
@@ -279,7 +278,6 @@ section:nth-child(odd) h2 {
   margin: -1rem 0 0;
   color: #fcc35a;
 }
-
 
 section:nth-child(odd) p {
   height: 40vh;
@@ -303,11 +301,8 @@ section:nth-child(even) p {
   color: #ffa500;
 }
 
-section:nth-child(even) {
-  background-image: url('images/art-lasovsky-8XddFc6NkBY-unsplash-transparent-background-80%-opacity.png');
-  background-size: cover;
-  background-position: center;
-  color: #fff;
+section:nth-child(3) {
+  padding: 15rem 0 0;
 }
 
 .textOverlay {
