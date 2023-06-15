@@ -471,6 +471,7 @@ form #sectionImage {
   display: block;
   width: 100%;
   margin: 1.5rem auto;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 form label {
@@ -507,7 +508,7 @@ button[type="submit"] {
   border-radius: 50%;
   font-size: 1rem;
   border: 3px solid #808080;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 #ctaSection5 {
