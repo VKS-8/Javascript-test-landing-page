@@ -60,7 +60,8 @@ header img {
 
 .skipLink:hover {
   border: 2px solid #fcc35a;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
+  margin: -1.5rem 0.45rem 1.5rem 0.37rem;
   font-size: 1.10rem;
   box-shadow: 2px 4px 5px rgba(232, 219, 219, 0.7);
 }
@@ -68,11 +69,6 @@ header img {
 .skipLink:focus {
   border-color: #ffa500;
   outline: none;
-}
-
-.skipLink1:hover {
-  padding: 1rem 0.5rem;
-  margin: -1.5rem 0.45rem 1.5rem 0.37rem;
 }
 
 nav img {
@@ -228,6 +224,63 @@ aside {
 
 .asideLinks a.active {
   border: 2px solid #5e4007;
+}
+
+.topNavDropdownMenu {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 0.75rem;
+  list-style: none;
+  font-size: 0.75em;
+}
+
+.asideDropdownMenu {
+  display: none;
+  position: relative;
+  top: -2.5rem;
+  left: 12rem;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 0.75rem;
+  list-style: none;
+  font-size: 0.75em;
+  text-align: center;
+  transition: left 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.asideDropdownMenu a {
+  color: #fff;
+}
+
+.hasDropdown:hover {
+  background: rgba(143, 143, 143, 0.3)
+}
+
+.hasDropdown:hover .asideDropdownMenu {
+  display: block;
+  left: 12rem;
+  transition: right 0.3s ease-in-out;
+}
+
+/* .asideDropdownMenu:hover a,
+.asideDropdownMenu:hover {
+  background: #fff;
+  color: #5e4007;
+  display: block;
+  left: 12rem;
+  transition: right 0.3s ease-in-out;
+} */
+
+
+
+
+.dropdownMenuTopNav a,
+.dropdownMenuAsideNav a {
+  color: #fff;
+  padding: 0.75rem;
 }
 
 /* Add styles for the scroll-to-top button */
