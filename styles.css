@@ -483,10 +483,6 @@ form input {
   padding: 2rem;
   border-radius: 10px;
   background:#808080;
-}
-
-form input::placeholder {
-  color: #000;
   font-size: 2rem;
 }
 
@@ -509,6 +505,11 @@ button[type="submit"] {
   font-size: 1rem;
   border: 3px solid #808080;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #fcc35a
 }
 
 #ctaSection5 {
@@ -519,12 +520,50 @@ button[type="submit"] {
 }
 
 #challengeContainer {
-  height: 10rem;
+  height: auto;
   width: 100%;
+  margin: 5rem auto;
+  background: pink;
 }
 
 footer {
-  height: 80vh;
-  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.footer-social a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+}
+
+/* Font Awesome icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
