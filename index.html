@@ -14,9 +14,9 @@
   <nav id="topNav">
     <ul class="navLinks">
     <img src="images/benigno-hoyuela-AqX_786_G0g-unsplash-transparent-background-edgeSmudge.png">
-    <a href="#main-content" class="skipLink skipLink1">Skip to<br>Main Content</a>
+    <a href="#mainContent" class="skipLink">Skip to<br>Main Content</a>
     <li>
-      <a href="#section1" class="active">Section 1</a>
+      <a href="#section1">Section 1</a>
     </li>
     <li>
       <a href="#section2">Section 2</a>
@@ -28,9 +28,14 @@
       <a href="#section4">Section 4</a>
     </li>
     <li>
-      <a href="#section5">Challenge</a>
+      <a href="#section5" class="hasDropdown">Challenge</a>
+      <ul id="topNavDropdown" class="topNavDropdownMenu">
+        <!-- Appended links go here -->
+        <li>
+          <a href="#section2">Section 2</a>
+        </li>
+      </ul>
     </li>
-      <!-- Navigation links will be dynamically populated -->
     </ul>
   </nav>
   <div>
@@ -45,12 +50,12 @@
     </div>
   </div>
 </header>
-  <main id="main-content">
+  <main id="mainContent">
     <aside id="aside">
       <button id="toggleAsideBtn"><span class="openClose">></span></button>
       <ul class="asideLinks">
         <li>
-          <a href="#section1" class="active">Section 1</a>
+          <a href="#section1">Section 1</a>
         </li>
         <li>
           <a href="#section2">Section 2</a>
@@ -62,13 +67,18 @@
           <a href="#section4">Section 4</a>
         </li>
         <li>
-          <a href="#section5">Challenge</a>
+          <a href="#section5" class="hasDropdown">Challenge</a>
+          <ul id="asideNavDropdown" class="asideDropdownMenu">
+            <!-- Appended links go here -->
+            <li>
+              <a href="#section2">Section 2</a>
+            </li>
+          </ul>
         </li>
-        <!--Aside navigation links will be dynamically populated-->
       </ul>
     </aside>
 
-    <section id="section1" class="active">
+    <section id="section1">
       <div class="flexContainer">
           <span id="bookTitle"><span class="quoteMark">“</span><span class="capitalLetter">T</span>he Chronicles<span id="titleFormat"> of Two Realms<span class="quoteMark">”</span></span></span>
         <div class="imageContainer">
