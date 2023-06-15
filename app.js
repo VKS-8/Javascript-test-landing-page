@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const section = []
 
+  // Function to update navigation links
+  function updateNavLinks(sectionTitle) {
   // Populate the navigation links dynamically
   const topNav = document.querySelector('#topNav');
   const topNavLink = document.createElement('a');
@@ -16,17 +18,19 @@ document.addEventListener('DOMContentLoaded', function() {
   asideNavLink.textContent = sectionTitle;
   asideNav.appendChild(asideNavLink);
 
-  // Update the nav dropdown in the top navigation
-  function updateDropdown(sectionTitle) {
-    const dropdownMenu = document.querySelector('#topNavDropdown');
-    dropdownItem.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
-    droptdownItem.textContent = sectionTitle;
+  // Update the dropdown in the top navigation
+  updateDropdown(sectionTitle);
 
-  // Append the dropdown item to the dropdown menu
-  dropdownMenu.appendChild(dropdownItem);
 }
 
+// Update the nav dropdown in the top navigation
+function updateDropdown(sectionTitle) {
+  const dropdownMenu = document.querySelector('#topNavDropdown');
 
+
+  dropdownItem.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
+  droptdownItem.textContent = sectionTitle;
+}
 
 // Set active state on sections as they scroll into view
 window.addEventListener('scroll', setActive);
