@@ -129,6 +129,7 @@ function setActive() {
     sectionImageInput.value = '';
   });
 
+  // Checks for visible section
   function isSectionVisible(section) {
     const rect = section.getBoundingClientRect();
     return rect.top < window.innerHeight / 2 && rect.bottom >= 0;
