@@ -292,7 +292,7 @@ aside {
 .scrollToTopBtn {
   display: none;
   position: fixed;
-  bottom: 8rem;
+  bottom: 4rem;
   right: 2rem;
   display: none;
   height: 70px;

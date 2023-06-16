@@ -168,12 +168,13 @@ function setActive() {
     setActive();
   });
 
+  // Adjust the threshold for section visibility
+  const threshold = 0.45;
 
   // Add event listener to show/hide the scroll-to-top button
   const scrollToTopBtn = document.getElementById('scrollToTop');
-  const header = document.getElementsByTagName('header');
   window.addEventListener('scroll', () => {
-    if(window.scrollY > window.innerHeight) {
+    if(window.scrollY > window.innerHeight * threshold) {
       scrollToTopBtn.style.display = 'block';
     } else {
       scrollToTopBtn.style.display = 'none';
