@@ -51,7 +51,7 @@ header img {
 .skipLink {
   position: fixed;
   top: 1rem;
-  left: 5rem;
+  left: 8rem;
   z-index: 11;
   color: #fff;
   border: 5px solid rgb(111, 0, 255);
