@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const section = []
-  console.log(section);
+  const sections = []
+  console.log(sections);
 
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
@@ -18,9 +18,9 @@ window.addEventListener('scroll', setActive);
 setActive();
 
 function setActive() {
-  const sections = document.querySelectorAll('section');
+  const sectionsActive = document.querySelectorAll('section');
 
-  sections.forEach(section => {
+  sectionsActive.forEach(section => {
     const sectionTop = section.getBoundingClientRect().top;
 
     // Add and remove the "active" class when the section scrolls through view
@@ -70,25 +70,32 @@ function setActive() {
   function appendSection(sectionTitle, sectionContent, sectionImage) {
     const challengeContainer = document.querySelector('#challengeContainer');
 
+    // Create the new section
+    const newSection = document.createElement('section');
+    const newSectionId = sectionTitle.toLowerCase().replace(/\s/g,'-'); // Create Id based on section title
+
+    // Set the id attribute of the new section
+    newSection.id = newSectionId;
+
     // Create the section title
     const title = document.createElement('h2');
     title.textContent = sectionTitle;
-    challengeContainer.appendChild(title);
+    newSection.appendChild(title);
 
     // Create the section content
     const content = document.createElement('p');
     content.textContent = `${sectionContent}`;
-    challengeContainer.appendChild(content);
+    newSection.appendChild(content);
 
   // Create an image element
   if (sectionImage) {
     const image = document.createElement('img');
     image.src = sectionImage;
-    challengeContainer.appendChild(image);
+    newSection.appendChild(image);
   }
 
   // Append the new section to the main element
-  challengeContainer.appendChild(section);
+  challengeContainer.appendChild(newSection);
   }
 
   // Handle form submission
