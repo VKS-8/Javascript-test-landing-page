@@ -171,7 +171,11 @@ function setActive() {
   // Add event listener to show/hide the scroll-to-top button
   const scrollToTopBtn = document.getElementById('scrollToTop');
   window.addEventListener('scroll', () => {
-    // Add code to show/hide the scrollToTopBtn based on scroll position
+    if(window.scrollY > window.innerHeight) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
   });
 
   // Add event listener to scroll to top when the button is clicked
