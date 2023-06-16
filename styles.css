@@ -51,7 +51,7 @@ header img {
 .skipLink {
   position: fixed;
   top: 1rem;
-  left: 5rem;
+  left: 8rem;
   z-index: 11;
   color: #fff;
   border: 5px solid rgb(111, 0, 255);
@@ -93,7 +93,7 @@ nav {
 
   nav ul {
     display: flex;
-    margin: -7.5rem 1rem 1rem auto;
+    margin: -6.75rem 1rem 1rem auto;
     width: 70%;
     border: 2px solid red;
   }
@@ -294,7 +294,7 @@ aside {
   position: fixed;
   bottom: 8rem;
   right: 2rem;
-  display: block;
+  display: none;
   height: 70px;
   width: 70px;
   padding: 0.25rem 0 0 0.25rem;

@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-<<<<<<< HEAD
-  const section = documetn.createElement('section');
-
-=======
->>>>>>> Second-append-section-try
 
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
@@ -15,8 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownMenu.appendChild(navLink);
 }
 
-<<<<<<< HEAD
-=======
 // Set active state on sections as they scroll into view
 window.addEventListener('scroll', setActive);
 
@@ -37,7 +30,6 @@ function setActive() {
   });
 }
 
->>>>>>> Second-append-section-try
   // Handle the smooth scrolling functionality
   function handleSmoothScroll(event) {
     event.preventDefault();
@@ -138,41 +130,11 @@ function setActive() {
     sectionImageInput.value = '';
   });
 
-<<<<<<< HEAD
-  // Function to check if a section is visible
-=======
->>>>>>> Second-append-section-try
   function isSectionVisible(section) {
     const rect = section.getBoundingClientRect();
     return rect.top < window.innerHeight / 2 && rect.bottom >= 0;
   }
 
-<<<<<<< HEAD
-  // Add event listener to toggle the active state of aside navigation links
-  window.addEventListener('scroll', () => {
-    const navLinks = document.querySelectorAll('.navLinks a');
-    const asideLinks = document.querySelectorAll('.asideLinks a');
-
-    navLinks.forEach(link => {
-    if (isSectionVisible(link)) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-    });
-
-    asideLinks.forEach(link => {
-      if (isSectionVisible(link)) {
-        link.setAttribute('aria-current', 'page');
-        link.classList.add('active');
-      } else {
-        link.removeAttribute('aria-current');
-        link.classList.remove('active');
-      }
-      });
-
-
-=======
   // Add event listener to toggle the active state of navigation links
   window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
@@ -202,47 +164,19 @@ function setActive() {
           link.classList.remove('active'); // Remove it
         }
     });
->>>>>>> Second-append-section-try
 
     setActive();
   });
 
-<<<<<<< HEAD
-  // Set active state on sections as they scroll into view
-  window.addEventListener('scroll', setSectionActive);
-
-  setSectionActive();
-
-  function setSectionActive() {
-    const sections = document.querySelectorAll('section');
-
-    sections.forEach(section => {
-      const sectionTop = section.getBoundingClientRect().top;
-
-      // Add and remove the "active" class when the section scrolls through view
-      if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
-        section.classList.remove('active');
-      } else {
-        section.classList.add('active');
-      }
-    });
-  }
-
-  // Event listener to show/hide the scroll-to-top button
-=======
 
   // Add event listener to show/hide the scroll-to-top button
->>>>>>> Second-append-section-try
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const header = document.getElementsByTagName('header');
   window.addEventListener('scroll', () => {
-    const headerBottom = header.getBoundingClientRect().bottom;
-
-    // Code to show/hide the scrollToTopBtn based on scroll position
-    if(headerBottom < window.innerHeight / 2) {
-      scrollToTopBtn.style.display = "block";
-    } else if (headerBottom > window.innerHeight / 2) {
-      scrollToTopBtn.style.display = "none";
+    if(window.scrollY > window.innerHeight) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
     }
   });
 
