@@ -57,7 +57,8 @@ function setActive() {
   function toggleAside() {
 
     aside.classList.toggle('showAside');
-    toggleAsideButton.classList.toggle('asideOpened openClose');
+    toggleAsideButton.classList.toggle('asideOpened');
+    // toggleAsideButton.classList.toggle('openClose');
   }
 
   // Add an event listener to the button that triggers the aside to open via toggle
@@ -106,7 +107,7 @@ function setActive() {
 
     const sectionTitle = sectionTitleInput.value;
     const sectionContent = sectionContentInput.value;
-    const sectionImage = null;
+    let sectionImage = null;
 
     if (sectionImageInput.files && sectionImageInput.files[0]) {
       let reader = new FileReader();
@@ -168,11 +169,13 @@ function setActive() {
     setActive();
   });
 
+  // Adjust the threshold for section visibility
+  const threshold = 0.45;
 
   // Add event listener to show/hide the scroll-to-top button
   const scrollToTopBtn = document.getElementById('scrollToTop');
   window.addEventListener('scroll', () => {
-    if(window.scrollY > window.innerHeight) {
+    if(window.scrollY > window.innerHeight * threshold) {
       scrollToTopBtn.style.display = 'block';
     } else {
       scrollToTopBtn.style.display = 'none';

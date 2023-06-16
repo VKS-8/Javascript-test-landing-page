@@ -173,7 +173,7 @@ nav {
   transition: right 0.3s ease-in-out;
 }
 
-.openClose {
+/* .openClose {
   @keyframes rotateAnimation {
     from {
       transform: rotate(0deg);
@@ -182,7 +182,7 @@ nav {
       transform: rotate(180deg);
     }
   }
-}
+} */
 
 /* Default styles for the aside */
 aside {
@@ -289,8 +289,9 @@ aside {
 
 /* Add styles for the scroll-to-top button */
 .scrollToTopBtn {
+  display: none;
   position: fixed;
-  bottom: 8rem;
+  bottom: 4rem;
   right: 2rem;
   display: none;
   height: 70px;
