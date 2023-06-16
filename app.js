@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
   const section = documetn.createElement('section');
 
+=======
+>>>>>>> Second-append-section-try
 
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
@@ -12,6 +15,29 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownMenu.appendChild(navLink);
 }
 
+<<<<<<< HEAD
+=======
+// Set active state on sections as they scroll into view
+window.addEventListener('scroll', setActive);
+
+setActive();
+
+function setActive() {
+  const sectionsActive = document.querySelectorAll('section');
+
+  sectionsActive.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+
+    // Add and remove the "active" class when the section scrolls through view
+    if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
+      section.classList.remove('active');
+    } else {
+      section.classList.add('active');
+    }
+  });
+}
+
+>>>>>>> Second-append-section-try
   // Handle the smooth scrolling functionality
   function handleSmoothScroll(event) {
     event.preventDefault();
@@ -51,25 +77,32 @@ document.addEventListener('DOMContentLoaded', function() {
   function appendSection(sectionTitle, sectionContent, sectionImage) {
     const challengeContainer = document.querySelector('#challengeContainer');
 
+    // Create the new section
+    const newSection = document.createElement('section');
+    const newSectionId = sectionTitle.toLowerCase().replace(/\s/g,'-'); // Create Id based on section title
+
+    // Set the id attribute of the new section
+    newSection.id = newSectionId;
+
     // Create the section title
     const title = document.createElement('h2');
     title.textContent = sectionTitle;
-    challengeContainer.appendChild(title);
+    newSection.appendChild(title);
 
     // Create the section content
     const content = document.createElement('p');
     content.textContent = `${sectionContent}`;
-    challengeContainer.appendChild(content);
+    newSection.appendChild(content);
 
   // Create an image element
   if (sectionImage) {
     const image = document.createElement('img');
     image.src = sectionImage;
-    challengeContainer.appendChild(image);
+    newSection.appendChild(image);
   }
 
   // Append the new section to the main element
-  challengeContainer.appendChild(section);
+  challengeContainer.appendChild(newSection);
   }
 
   // Handle form submission
@@ -105,12 +138,16 @@ document.addEventListener('DOMContentLoaded', function() {
     sectionImageInput.value = '';
   });
 
+<<<<<<< HEAD
   // Function to check if a section is visible
+=======
+>>>>>>> Second-append-section-try
   function isSectionVisible(section) {
     const rect = section.getBoundingClientRect();
     return rect.top < window.innerHeight / 2 && rect.bottom >= 0;
   }
 
+<<<<<<< HEAD
   // Add event listener to toggle the active state of aside navigation links
   window.addEventListener('scroll', () => {
     const navLinks = document.querySelectorAll('.navLinks a');
@@ -135,10 +172,42 @@ document.addEventListener('DOMContentLoaded', function() {
       });
 
 
+=======
+  // Add event listener to toggle the active state of navigation links
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navLinks a');
+    const asideLinks = document.querySelectorAll('.asideLinks a');
+
+
+      sections.forEach((section, index) => {
+        const link = navLinks[index];
+        link.removeAttribute('aria-current');
+        link.classList.remove('active'); // Remove it
+          if (isSectionVisible(section)) {
+              link.setAttribute('aria-current', 'page');
+              link.classList.add('active'); // Add active state to current section top nav link
+            } else {
+              link.removeAttribute('aria-current');
+              link.classList.remove('active'); // Remove it
+          }
+      });
+
+    asideLinks.forEach((link, index) => {
+        if (isSectionVisible(sections[index])) {
+          link.setAttribute('aria-current', 'page');
+          link.classList.add('active'); // Add active state to current section top aside nav link
+        } else {
+          link.removeAttribute('aria-current');
+          link.classList.remove('active'); // Remove it
+        }
+    });
+>>>>>>> Second-append-section-try
 
     setActive();
   });
 
+<<<<<<< HEAD
   // Set active state on sections as they scroll into view
   window.addEventListener('scroll', setSectionActive);
 
@@ -160,6 +229,10 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Event listener to show/hide the scroll-to-top button
+=======
+
+  // Add event listener to show/hide the scroll-to-top button
+>>>>>>> Second-append-section-try
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const header = document.getElementsByTagName('header');
   window.addEventListener('scroll', () => {
