@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
   const section = []
+  console.log(section);
 
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
   // Populate the navigation links dynamically
-  const dropdownMenu = document.querySelector('.hasDropdown');
+  const dropdownMenu = document.querySelectorAll('.hasDropdown');
   const navLink = document.createElement('a');
   navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
   navLink.textContent = sectionTitle;
@@ -17,7 +18,6 @@ window.addEventListener('scroll', setActive);
 setActive();
 
 function setActive() {
-  // const triggerBottom = window.innerHeight / 20 * 19;
   const sections = document.querySelectorAll('section');
 
   sections.forEach(section => {
@@ -58,10 +58,9 @@ function setActive() {
   // Function to toggle the aside visibility
   function toggleAside() {
 
-      aside.classList.toggle('showAside');
-      toggleAsideButton.classList.toggle('asideOpened openClose');
-
-    }
+    aside.classList.toggle('showAside');
+    toggleAsideButton.classList.toggle('asideOpened openClose');
+  }
 
   // Add an event listener to the button that triggers the aside to open via toggle
   const toggleAsideButton = document.getElementById('toggleAsideBtn');
@@ -69,27 +68,27 @@ function setActive() {
 
   // Function to append a new section to the page
   function appendSection(sectionTitle, sectionContent, sectionImage) {
-    const sectionContainer = document.querySelector('#sectionContainer');
+    const challengeContainer = document.querySelector('#challengeContainer');
 
-  // Create the section title
-  const title = document.createElement('h2');
-  title.textContent = sectionTitle;
-  sectionContainer.appendChild(title);
+    // Create the section title
+    const title = document.createElement('h2');
+    title.textContent = sectionTitle;
+    challengeContainer.appendChild(title);
 
-  // Create the section content
-  const content = document.createElement('p');
-  content.textContent = `This is the content of ${sectionTitle.toLowerCase()}.`;
-  sectionContainer.appendChild(content);
+    // Create the section content
+    const content = document.createElement('p');
+    content.textContent = `${sectionContent}`;
+    challengeContainer.appendChild(content);
 
   // Create an image element
   if (sectionImage) {
     const image = document.createElement('img');
     image.src = sectionImage;
-    sectionContainer.appendChild(image);
+    challengeContainer.appendChild(image);
   }
 
   // Append the new section to the main element
-  sectionContainer.appendChild(section);
+  challengeContainer.appendChild(section);
   }
 
   // Handle form submission
@@ -105,20 +104,21 @@ function setActive() {
     const sectionImage = null;
 
     if (sectionImageInput.files && sectionImageInput.files[0]) {
-      const reader = new FileReader();
+      let reader = new FileReader();
       reader.onload = function(e) {
         sectionImage = e.target.result;
-        // Call the appendSection function with the user-provided section ID, title, content, and image
-        appendSection(sectionId, sectionTitle, sectionContent, sectionImage);
+        // Call the appendSection function with the user-provided section title, content, and image
+        appendSection(sectionTitle, sectionContent, sectionImage);
       };
       reader.readAsDataURL(sectionImageInput.files[0]);
     } else {
         //Call the appendSection function with the user-provided section ID, title, content
-        appendSection(sectionId, sectionTitle, sectionContent, sectionImage);
+        appendSection(sectionTitle, sectionContent);
     }
 
+    updateNavLinks(sectionTitle);
+
     // Clear the form inputs
-    sectionIdInput.value = '';
     sectionTitleInput.value = '';
     sectionContentInput.value = '';
     sectionImageInput.value = '';
