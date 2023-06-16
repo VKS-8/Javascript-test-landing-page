@@ -95,7 +95,6 @@ nav {
     display: flex;
     margin: -7.5rem 1rem 1rem auto;
     width: 70%;
-    border: 2px solid red;
   }
 
   nav ul li {
