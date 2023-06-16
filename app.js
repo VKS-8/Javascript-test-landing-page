@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const section = []
-  console.log(section);
+  const section = documetn.createElement('section');
+
 
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
@@ -10,26 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
   navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
   navLink.textContent = sectionTitle;
   dropdownMenu.appendChild(navLink);
-}
-
-// Set active state on sections as they scroll into view
-window.addEventListener('scroll', setActive);
-
-setActive();
-
-function setActive() {
-  const sections = document.querySelectorAll('section');
-
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-
-    // Add and remove the "active" class when the section scrolls through view
-    if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
-      section.classList.remove('active');
-    } else {
-      section.classList.add('active');
-    }
-  });
 }
 
   // Handle the smooth scrolling functionality
@@ -59,7 +39,8 @@ function setActive() {
   function toggleAside() {
 
     aside.classList.toggle('showAside');
-    toggleAsideButton.classList.toggle('asideOpened openClose');
+    toggleAsideButton.classList.toggle('asideOpened');
+    // toggleAsideButton.classList.toggle('openClose');
   }
 
   // Add an event listener to the button that triggers the aside to open via toggle
@@ -101,7 +82,7 @@ function setActive() {
 
     const sectionTitle = sectionTitleInput.value;
     const sectionContent = sectionContentInput.value;
-    const sectionImage = null;
+    let sectionImage = null;
 
     if (sectionImageInput.files && sectionImageInput.files[0]) {
       let reader = new FileReader();
@@ -124,21 +105,72 @@ function setActive() {
     sectionImageInput.value = '';
   });
 
+  // Function to check if a section is visible
+  function isSectionVisible(section) {
+    const rect = section.getBoundingClientRect();
+    return rect.top < window.innerHeight / 2 && rect.bottom >= 0;
+  }
+
   // Add event listener to toggle the active state of aside navigation links
   window.addEventListener('scroll', () => {
-    if (isSectionVisible(section)) {
+    const navLinks = document.querySelectorAll('.navLinks a');
+    const asideLinks = document.querySelectorAll('.asideLinks a');
+
+    navLinks.forEach(link => {
+    if (isSectionVisible(link)) {
       link.setAttribute('aria-current', 'page');
     } else {
       link.removeAttribute('aria-current');
     }
-    // Add code to determine the active section based on scroll position
-    // and update the active state of section navigation links accordingly
+    });
+
+    asideLinks.forEach(link => {
+      if (isSectionVisible(link)) {
+        link.setAttribute('aria-current', 'page');
+        link.classList.add('active');
+      } else {
+        link.removeAttribute('aria-current');
+        link.classList.remove('active');
+      }
+      });
+
+
+
+    setActive();
   });
 
-  // Add event listener to show/hide the scroll-to-top button
+  // Set active state on sections as they scroll into view
+  window.addEventListener('scroll', setSectionActive);
+
+  setSectionActive();
+
+  function setSectionActive() {
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
+
+      // Add and remove the "active" class when the section scrolls through view
+      if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
+        section.classList.remove('active');
+      } else {
+        section.classList.add('active');
+      }
+    });
+  }
+
+  // Event listener to show/hide the scroll-to-top button
   const scrollToTopBtn = document.getElementById('scrollToTop');
+  const header = document.getElementsByTagName('header');
   window.addEventListener('scroll', () => {
-    // Add code to show/hide the scrollToTopBtn based on scroll position
+    const headerBottom = header.getBoundingClientRect().bottom;
+
+    // Code to show/hide the scrollToTopBtn based on scroll position
+    if(headerBottom < window.innerHeight / 2) {
+      scrollToTopBtn.style.display = "block";
+    } else if (headerBottom > window.innerHeight / 2) {
+      scrollToTopBtn.style.display = "none";
+    }
   });
 
   // Add event listener to scroll to top when the button is clicked
