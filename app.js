@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const sections = []
-  console.log(sections);
 
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
@@ -131,16 +129,44 @@ function setActive() {
     sectionImageInput.value = '';
   });
 
-  // Add event listener to toggle the active state of aside navigation links
+  function isSectionVisible(section) {
+    const rect = section.getBoundingClientRect();
+    return rect.top < window.innerHeight / 2 && rect.bottom >= 0;
+  }
+
+  // Add event listener to toggle the active state of navigation links
   window.addEventListener('scroll', () => {
-    if (isSectionVisible(section)) {
-      link.setAttribute('aria-current', 'page');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-    // Add code to determine the active section based on scroll position
-    // and update the active state of section navigation links accordingly
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navLinks a');
+    const asideLinks = document.querySelectorAll('.asideLinks a');
+
+
+      sections.forEach((section, index) => {
+        const link = navLinks[index];
+        link.removeAttribute('aria-current');
+        link.classList.remove('active'); // Remove it
+          if (isSectionVisible(section)) {
+              link.setAttribute('aria-current', 'page');
+              link.classList.add('active'); // Add active state to current section top nav link
+            } else {
+              link.removeAttribute('aria-current');
+              link.classList.remove('active'); // Remove it
+          }
+      });
+
+    asideLinks.forEach((link, index) => {
+        if (isSectionVisible(sections[index])) {
+          link.setAttribute('aria-current', 'page');
+          link.classList.add('active'); // Add active state to current section top aside nav link
+        } else {
+          link.removeAttribute('aria-current');
+          link.classList.remove('active'); // Remove it
+        }
+    });
+
+    setActive();
   });
+
 
   // Add event listener to show/hide the scroll-to-top button
   const scrollToTopBtn = document.getElementById('scrollToTop');

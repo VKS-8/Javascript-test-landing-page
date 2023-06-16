@@ -49,7 +49,10 @@ header img {
 }
 
 .skipLink {
-  position: relative;
+  position: fixed;
+  top: 1rem;
+  left: 5rem;
+  z-index: 11;
   color: #fff;
   border: 5px solid rgb(111, 0, 255);
   border-radius: 10px;
@@ -61,7 +64,7 @@ header img {
 .skipLink:hover {
   border: 2px solid #fcc35a;
   padding: 1rem 0.5rem;
-  margin: -1.5rem 0.45rem 1.5rem 0.37rem;
+  margin: 0 0.45rem 1.5rem 0.37rem;
   font-size: 1.10rem;
   box-shadow: 2px 4px 5px rgba(232, 219, 219, 0.7);
 }
@@ -73,8 +76,8 @@ header img {
 
 nav img {
   height: 6.5rem;
-  padding:0;
-  margin: -2rem 0 -3rem -3.25rem;
+  padding: 0;
+  margin: 1rem 0 0;
 }
 
 nav {
@@ -90,8 +93,9 @@ nav {
 
   nav ul {
     display: flex;
-    justify-content: flex-end;
-    margin: 1rem;
+    margin: -7.5rem 1rem 1rem auto;
+    width: 70%;
+    border: 2px solid red;
   }
 
   nav ul li {
@@ -229,8 +233,9 @@ aside {
 .topNavDropdownMenu {
   display: block;
   position: relative;
-  top: 0;
+  top: 8rem;
   left: 0;
+  width:fit-content;
   background: rgba(20, 20, 20, 0.8);
   padding: 0.75rem;
   list-style: none;
