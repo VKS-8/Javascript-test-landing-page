@@ -596,7 +596,7 @@ button[type="submit"] {
   cursor: pointer;
 }
 
-form #imageInstructions {
+form #instructions {
   position: relative;
   top: 0.75rem;
   width: 100%;
@@ -618,10 +618,32 @@ button[type="submit"]:hover {
 }
 
 #challengeContainer {
+  position: relative;
+  top: 0;
+  left: 3.5rem;
+  z-index: -1;
   height: 15vh;
   width: 100%;
   margin: 0 auto;
   background: pink;
+}
+
+#challengeContainer h2 {
+  font-size: 3rem;
+}
+
+#challengeContainer p {
+  position: relative;
+  top: 2.25rem;
+  max-width: 50vh;
+  font-size: 2rem;
+}
+
+#challengeContainer img {
+  position: relative;
+  top: -5rem;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
 }
 
 footer {
