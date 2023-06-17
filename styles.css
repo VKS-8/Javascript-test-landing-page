@@ -629,13 +629,18 @@ button[type="submit"]:hover {
 }
 
 #challengeContainer h2 {
+  position: relative;
+  top: 0;
+  left: 15rem;
   font-size: 3rem;
+  margin: 0 auto;
 }
 
 #challengeContainer p {
   position: relative;
   top: 2.25rem;
-  max-width: 50vh;
+  left: 15rem;
+  max-width: 100vh;
   font-size: 2rem;
 }
 
