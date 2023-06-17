@@ -133,7 +133,7 @@ console.log(challengeContainer);
   // Checks for visible section
   function isSectionVisible(section) {
     const rect = section.getBoundingClientRect();
-    return rect.top < window.innerHeight / 2 && rect.bottom >= 0;
+    return rect.top < window.innerHeight / 2 && rect.bottom >= threshold;
   }
 
   // Add event listener to toggle the active state of navigation links
