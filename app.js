@@ -30,7 +30,7 @@ function setActive() {
   });
 }
 
-  // Handle the smooth scrolling functionality
+// Handle the smooth scrolling functionality
   function handleSmoothScroll(event) {
     event.preventDefault();
     const targetId = event.target.getAttribute('href').substring(1);
@@ -58,7 +58,7 @@ function setActive() {
 
     aside.classList.toggle('showAside');
     toggleAsideButton.classList.toggle('asideOpened');
-    // toggleAsideButton.classList.toggle('openClose');
+    toggleAsideButton.classList.toggle('openClose');
   }
 
   // Add an event listener to the button that triggers the aside to open via toggle
