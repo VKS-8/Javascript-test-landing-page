@@ -100,7 +100,7 @@ nav {
 
   .navLinks input {
     position: absolute;
-    top: 3.85rem;
+    top: 8.85rem;
     left: 7rem;
     height: 3rem;
     width: 15rem;
@@ -111,7 +111,7 @@ nav {
 
   #searchBtn {
     position: absolute;
-    top: 3.85rem;
+    top: 8.85rem;
     left: 20rem;
     height: 48px;
     width: 100px;
