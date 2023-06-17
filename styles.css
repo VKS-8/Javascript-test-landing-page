@@ -100,8 +100,8 @@ nav {
 
   .navLinks input {
     position: absolute;
-    top: 8.85rem;
-    left: 2rem;
+    top: 3.85rem;
+    left: 7rem;
     height: 3rem;
     width: 15rem;
     border-radius: 10px;
@@ -111,8 +111,8 @@ nav {
 
   #searchBtn {
     position: absolute;
-    top: 8.85rem;
-    left: 15rem;
+    top: 3.85rem;
+    left: 20rem;
     height: 48px;
     width: 100px;
     border: none;
@@ -441,7 +441,7 @@ section:nth-child(3) {
   left: 60rem;
   height: 85vh;
   width: 500px;
-  padding: 8rem auto;
+  padding: 5rem auto;
   background:rgba(0, 0, 0, 0.45)
 }
 
@@ -525,7 +525,7 @@ span #titleFormat {
 
 #section5 h2 {
   position: relative;
-  top: 3.5rem;
+  top: 0;
   left: 2rem;
   margin: 0 auto;
   font-size: 5rem;
@@ -534,7 +534,7 @@ span #titleFormat {
 
 #section5 p {
   position: relative;
-  top: 7rem;
+  top: 5rem;
   left: 0;
   height: fit-content;
   width: 80%;
@@ -595,6 +595,16 @@ button[type="submit"] {
   border: 3px solid #808080;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+}
+
+form #imageInstructions {
+  position: relative;
+  top: 0.75rem;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: 2rem;
 }
 
 button[type="submit"]:hover {

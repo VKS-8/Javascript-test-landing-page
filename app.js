@@ -68,7 +68,7 @@ function setActive() {
   // Function to append a new section to the page
   function appendSection(sectionTitle, sectionContent, sectionImage) {
     const challengeContainer = document.querySelector('#challengeContainer');
-
+console.log(challengeContainer);
     // Create the new section
     const newSection = document.createElement('section');
     const newSectionId = sectionTitle.toLowerCase().replace(/\s/g,'-'); // Create Id based on section title
