@@ -30,7 +30,7 @@ function setActive() {
   });
 }
 
-  // Handle the smooth scrolling functionality
+// Handle the smooth scrolling functionality
   function handleSmoothScroll(event) {
     event.preventDefault();
     const targetId = event.target.getAttribute('href').substring(1);
