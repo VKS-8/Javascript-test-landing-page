@@ -117,6 +117,11 @@ nav {
     border: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    background: #808080;
+  }
+
+  #searchBtn:hover {
+    background: #ffa500
   }
 
   nav ul li {
