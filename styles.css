@@ -143,16 +143,16 @@ nav {
 #toggleAsideBtn {
   position: relative;
   top: 5rem;
-  left: 250px;
-  height: 3rem;
-  width: 3rem;
+  left: 240px;
+  height: 3.75rem;
+  width: 4rem;
   background:rgba(0, 0, 0, 0.2);
   border: 2px solid #9f9d9d;
-  border-left: none;
-  border-radius: 0 20px 20px 0;
+  border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: 900;
+  text-align: center;
   color: #808080;
   cursor: pointer;
 }
@@ -165,7 +165,6 @@ nav {
 #toggleAsideBtn:focus {
   outline: none;
   border: 2px solid #674401;
-  border-left: none;
   color: #fcc35a;
 }
 
@@ -174,16 +173,9 @@ nav {
   transition: right 0.3s ease-in-out;
 }
 
-/* .openClose {
-  @keyframes rotateAnimation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(180deg);
-    }
-  }
-} */
+.openClose {
+  transform: rotateZ(180deg);
+}
 
 /* Default styles for the aside */
 aside {
