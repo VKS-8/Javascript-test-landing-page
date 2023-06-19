@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
 const searchBar = document.querySelector('#search-bar');
 const searchBarBtn = document.querySelector('#searchBtn');
 
-searchBar.addEventListener('keydown', showBtn);
+searchBar.addEventListener('click', showBtn);
 
 function showBtn() {
-  searchBarBtn.classList.toggle('showBtn');
+  setTimeout(searchBarBtn.classList.add('showBtn'), 3000);
 }
 
 // Set active state on sections as they scroll into view
