@@ -101,13 +101,14 @@ nav {
 
   .navLinks input {
     position: absolute;
-    top: 8.85rem;
+    top: 5.85rem;
     left: 7rem;
     height: 3rem;
     width: 5rem;
     border-radius: 10px;
     padding-left: 1rem;
     border: none;
+    background: #c9c8c8;
   }
 
   .navLinks input:focus {
