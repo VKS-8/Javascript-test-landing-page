@@ -1,5 +1,8 @@
 /* Desktop display: 1600 x 900 */
 
+/* Font Awesome icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -241,7 +244,7 @@ nav li #topNavDropdown li {
     padding-bottom: 5rem;
   }
 
-/* Styles for the slide-in aside */
+/* Styles for the slide-in aside Note: will move to mobile styles */
 #toggleAsideBtn {
   position: relative;
   top: 5rem;
@@ -296,10 +299,6 @@ aside {
 .showAside {
   left: 0;
 }
-
-
-
-
 
 .asideLinks a {
   color: #5e4007;
@@ -742,7 +741,4 @@ footer {
 .footerCopyright p {
   font-size: 1rem;
 }
-
-/* Font Awesome icons */
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
