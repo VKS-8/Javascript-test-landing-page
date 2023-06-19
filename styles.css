@@ -101,16 +101,27 @@ nav {
 
   .navLinks input {
     position: absolute;
-    top: 8.85rem;
+    top: 5.85rem;
     left: 7rem;
     height: 3rem;
-    width: 15rem;
+    width: 5rem;
     border-radius: 10px;
     padding-left: 1rem;
     border: none;
+    background: #c9c8c8;
+  }
+
+  .navLinks input:focus {
+    width: 15rem;
+  }
+
+  .showBtn {
+    display: block;
+    transition: all 0.2s ease;
   }
 
   #searchBtn {
+    display: none;
     position: absolute;
     top: 8.85rem;
     left: 20rem;
@@ -146,6 +157,7 @@ nav {
   nav ul li a:hover {
     background:rgba(143, 143, 143, 0.3);
     padding-bottom: 0.5rem;
+    transition: all 0.5s ease;
   }
 
   nav ul li a.active {
@@ -178,6 +190,7 @@ nav {
 .navLinks a.active {
   border: 2px solid #ffa500;
   border-bottom: 5px solid #ffa500;
+  transition: all 0.2s ease;
 }
 
 /* Sourced code from this link
@@ -188,9 +201,8 @@ nav ul #topNavDropdown {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  transition: all 0.3s ease-in-out;
   margin-top: 0;
-  padding-top: 1rem;
+  padding-top: 1rem 0;
   top: 7.25rem;
   right: 0;
 }
@@ -202,6 +214,7 @@ nav li ul #topNavDropdown:hover {
   visibility: visible;
   opacity: 1;
   border-top: 10px solid #ffa500;
+  transition: all 1s ease;
 }
 
 nav li > #topNavDropdown li:hover {
@@ -211,6 +224,7 @@ nav li > #topNavDropdown li:hover {
   text-align: center;
   background: #808080;
   padding-top: 0.5rem;
+  transition: all 0.5s ease;
 }
 
 nav li > #topNavDropdown li a:hover {
