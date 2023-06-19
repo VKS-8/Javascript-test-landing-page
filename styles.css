@@ -114,15 +114,13 @@ nav {
     width: 15rem;
   }
 
-  .navLinks input:focus #searchBtn {
-    visibility: visible;
+  .showBtn {
     display: block;
     transition: all 0.2s ease;
   }
 
   #searchBtn {
     display: none;
-    visibility: invisible;
     position: absolute;
     top: 8.85rem;
     left: 20rem;

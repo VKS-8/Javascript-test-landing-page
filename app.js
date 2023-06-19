@@ -10,6 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
   dropdownMenu.appendChild(navLink);
 }
 
+const searchBar = document.querySelector('#search-bar');
+const searchBarBtn = document.querySelector('#searchBtn');
+
+searchBar.addEventListener('keydown', showBtn);
+
+function showBtn() {
+  searchBarBtn.classList.toggle('showBtn');
+}
+
 // Set active state on sections as they scroll into view
 window.addEventListener('scroll', setActive);
 
