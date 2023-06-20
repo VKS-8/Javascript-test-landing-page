@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Adjust the threshold for section visibility
-    const threshold = 0.55;
+    const threshold = 0.50;
 
     // Add event listener to show/hide the scroll-to-top button
     const scrollToTopBtn = document.getElementById('scrollToTop');
