@@ -1,13 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+  // Retrieve stored links from local storage
+  const storedLinks = JSON.parse(localStorage.getItem('navLinks')) || [];
+
   // Function to update navigation links
   function updateNavLinks(sectionTitle) {
     // Populate the navigation links dynamically
     const dropdownMenu = document.querySelectorAll('.hasDropdown');
-    const navLink = document.createElement('a');
-    navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
-    navLink.textContent = sectionTitle;
-    dropdownMenu.appendChild(navLink);
+
+    dropdownMenu.forEach(dropdownMenu => {
+      const navLink = document.createElement('a');
+      navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
+      navLink.textContent = sectionTitle;
+      dropdownMenu.appendChild(navLink);
+    });
+
+    storedLinks.push(sectionTitle);
+    localStorage.setItem('navLink', JSON.stringify(storedLinks));
   }
 
   // Get search bar elements
@@ -43,44 +52,48 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Handle the smooth scrolling functionality
-    function handleSmoothScroll(event) {
-      event.preventDefault();
-      const targetId = event.target.getAttribute('href').substring(1);
-      const targetSection = document.getElementById(targetId);
-      targetSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  function handleSmoothScroll(event) {
+    event.preventDefault();
+    const targetId = event.target.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+  }
 
-    // Add event listeners to the navigation links for smooth scrolling
-    const navLinks = document.querySelectorAll('.navLinks a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', handleSmoothScroll);
-    });
+  // Add event listeners to the navigation links for smooth scrolling
+  const navLinks = document.querySelectorAll('.navLinks a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', handleSmoothScroll);
+  });
 
-    // Add event listeners to the aside navigation links for smooth scrolling
-    const asideLinks = document.querySelectorAll('.asideLinks a');
-    asideLinks.forEach(link => {
-      link.addEventListener('click', handleSmoothScroll);
-    });
+  // Add event listeners to the aside navigation links for smooth scrolling
+  const asideLinks = document.querySelectorAll('.asideLinks a');
+  asideLinks.forEach(link => {
+    link.addEventListener('click', handleSmoothScroll);
+  });
 
-    // Get the aside element
-    const aside = document.getElementById('aside');
+  // Get the aside element
+  const aside = document.getElementById('aside');
 
-    // Function to toggle the aside visibility
-    function toggleAside() {
+  // Function to toggle the aside visibility
+  function toggleAside() {
 
-      aside.classList.toggle('showAside');
-      toggleAsideButton.classList.toggle('asideOpened');
-      toggleAsideButton.classList.toggle('openClose');
-    }
+    aside.classList.toggle('showAside');
+    toggleAsideButton.classList.toggle('asideOpened');
+    toggleAsideButton.classList.toggle('openClose');
+  }
 
-    // Add an event listener to the button that triggers the aside to open via toggle
-    const toggleAsideButton = document.getElementById('toggleAsideBtn');
-    toggleAsideButton.addEventListener('click', toggleAside);
+  // Add an event listener to the button that triggers the aside to open via toggle
+  const toggleAsideButton = document.getElementById('toggleAsideBtn');
+  toggleAsideButton.addEventListener('click', toggleAside);
 
-    // Function to append a new section to the page
-    function appendSection(sectionTitle, sectionContent, sectionImage) {
-      const challengeContainer = document.querySelector('#challengeContainer');
+  // Retrieve stored sections from local storage
+  const storedSections = JSON.parse(localStorage.getItem('newSections')) || [];
 
+  // Function to append a new section to the page
+  function appendSection(sectionTitle, sectionContent, sectionImage) {
+    const challengeContainers = document.querySelectorAll('#challengeContainer');
+
+    challengeContainers.forEach(challengeContainer => {
       // Create the new section
       const newSection = document.createElement('section');
       const newSectionId = sectionTitle.toLowerCase().replace(/\s/g,'-'); // Create Id based on section title
@@ -107,6 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Append the new section to the main element
       challengeContainer.appendChild(newSection);
+    });
+
+      storedSections.push({title: sectionTitle, content: sectionContent, image: sectionImage});
+      localStorage.setItem('newSections', JSON.stringify(storedSections));
     }
 
     // Handle form submission
@@ -134,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
           appendSection(sectionTitle, sectionContent);
       }
 
+      appendSection(sectionTitle, sectionContent, sectionImage);
       updateNavLinks(sectionTitle);
 
       // Clear the form inputs
