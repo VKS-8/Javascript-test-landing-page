@@ -702,6 +702,7 @@ span #titleFormat {
   height: fit-content;
   width: 80%;
   margin: 2rem auto 0;
+  padding: 1rem;
   background:rgba(0, 0, 0, 0.3);
   font-size: 3rem;
   border-radius: 10px;
