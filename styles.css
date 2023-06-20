@@ -451,7 +451,7 @@ aside {
     width: 100%;
     text-align: center;
     background: #808080;
-    padding-top: 0.5rem;
+    padding: 0.5rem 0;
     transition: all 0.5s ease;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   }
