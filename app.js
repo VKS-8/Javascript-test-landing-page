@@ -1,45 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Function to update navigation links
-  function updateNavLinks(sectionTitle) {
-  // Populate the navigation links dynamically
-  const dropdownMenu = document.querySelectorAll('.hasDropdown');
-  const navLink = document.createElement('a');
-  navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
-  navLink.textContent = sectionTitle;
-  dropdownMenu.appendChild(navLink);
-}
+  // Get search bar elements
+  const searchBar = document.querySelector('#search-bar');
+  const searchBarBtn = document.querySelector('#searchBtn');
 
-const searchBar = document.querySelector('#search-bar');
-const searchBarBtn = document.querySelector('#searchBtn');
+  // Add event listener to the search bar
+  searchBar.addEventListener('click', showBtn);
 
-searchBar.addEventListener('keydown', showBtn);
+  // Function to show the submit button when search bar opens
+  function showBtn() {
+    setTimeout(searchBarBtn.classList.add('showBtn'), 3000);
+  }
 
-function showBtn() {
-  searchBarBtn.classList.toggle('showBtn');
-}
+  // Set active state on sections as they scroll into view
+  window.addEventListener('scroll', setActive);
 
-// Set active state on sections as they scroll into view
-window.addEventListener('scroll', setActive);
+  setActive();
 
-setActive();
+  function setActive() {
+    const sectionsActive = document.querySelectorAll('section');
 
-function setActive() {
-  const sectionsActive = document.querySelectorAll('section');
+    sectionsActive.forEach(section => {
+      const sectionTop = section.getBoundingClientRect().top;
 
-  sectionsActive.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
+      // Add and remove the "active" class when the section scrolls through view
+      if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
+        section.classList.remove('active');
+      } else {
+        section.classList.add('active');
+      }
+    });
+  }
 
-    // Add and remove the "active" class when the section scrolls through view
-    if (sectionTop > window.innerHeight || sectionTop + section.offsetHeight < 10) {
-      section.classList.remove('active');
-    } else {
-      section.classList.add('active');
-    }
-  });
-}
-
-// Handle the smooth scrolling functionality
+  // Handle the smooth scrolling functionality
   function handleSmoothScroll(event) {
     event.preventDefault();
     const targetId = event.target.getAttribute('href').substring(1);
@@ -74,125 +67,150 @@ function setActive() {
   const toggleAsideButton = document.getElementById('toggleAsideBtn');
   toggleAsideButton.addEventListener('click', toggleAside);
 
+  // Function to update navigation links
+  function updateNavLinks(sectionTitle) {
+    // Populate the navigation links dynamically
+    const dropdownNavs = document.querySelectorAll('.dropdownNav');
+
+    dropdownNavs.forEach(dropdownNav => {
+      const navListItem = document.createElement('li');
+      const navLink = document.createElement('a');
+      navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
+      navLink.textContent = sectionTitle;
+      navListItem.appendChild(navLink);
+      dropdownNav.appendChild(navListItem);
+    });
+  }
+
   // Function to append a new section to the page
   function appendSection(sectionTitle, sectionContent, sectionImage) {
-    const challengeContainer = document.querySelector('#challengeContainer');
-console.log(challengeContainer);
-    // Create the new section
-    const newSection = document.createElement('section');
-    const newSectionId = sectionTitle.toLowerCase().replace(/\s/g,'-'); // Create Id based on section title
+    const challengeContainers = document.querySelectorAll('#challengeContainer');
 
-    // Set the id attribute of the new section
-    newSection.id = newSectionId;
+    challengeContainers.forEach(challengeContainer => {
+      // Create the new section
+      const newSection = document.createElement('section');
+      const newSectionId = sectionTitle.toLowerCase().replace(/\s/g,'-'); // Create Id based on section title
 
-    // Create the section title
-    const title = document.createElement('h2');
-    title.textContent = sectionTitle;
-    newSection.appendChild(title);
+      // Set the id attribute of the new section
+      newSection.id = newSectionId;
 
-    // Create the section content
-    const content = document.createElement('p');
-    content.textContent = `${sectionContent}`;
-    newSection.appendChild(content);
+      // Create the section title
+      const title = document.createElement('h2');
+      title.textContent = sectionTitle;
+      newSection.appendChild(title);
 
-  // Create an image element
-  if (sectionImage) {
-    const image = document.createElement('img');
-    image.src = sectionImage;
-    newSection.appendChild(image);
-  }
+      // Create the section content
+      const content = document.createElement('p');
+      content.textContent = `${sectionContent}`;
+      newSection.appendChild(content);
 
-  // Append the new section to the main element
-  challengeContainer.appendChild(newSection);
-  }
+      // Create an image element
+      if (sectionImage) {
+        const image = document.createElement('img');
+        image.src = sectionImage;
+        newSection.appendChild(image);
+      }
 
-  // Handle form submission
-  document.querySelector('#sectionForm').addEventListener('submit', function(event ) {
-    event.preventDefault();
+      // Append the new section to the main element
+      challengeContainer.appendChild(newSection);
+    });
 
-    const sectionTitleInput = document.querySelector('#sectionTitle');
-    const sectionContentInput = document.querySelector('#sectionContent');
-    const sectionImageInput = document.querySelector('#sectionImage');
-
-    const sectionTitle = sectionTitleInput.value;
-    const sectionContent = sectionContentInput.value;
-    let sectionImage = null;
-
-    if (sectionImageInput.files && sectionImageInput.files[0]) {
-      let reader = new FileReader();
-      reader.onload = function(e) {
-        sectionImage = e.target.result;
-        // Call the appendSection function with the user-provided section title, content, and image
-        appendSection(sectionTitle, sectionContent, sectionImage);
-      };
-      reader.readAsDataURL(sectionImageInput.files[0]);
-    } else {
-        //Call the appendSection function with the user-provided section ID, title, content
-        appendSection(sectionTitle, sectionContent);
+      storedSections.push({title: sectionTitle, content: sectionContent, image: sectionImage});
+      localStorage.setItem('newSections', JSON.stringify(storedSections));
     }
 
-    updateNavLinks(sectionTitle);
+    // Handle form submission
+    document.querySelector('#sectionForm').addEventListener('submit', function(event ) {
+      event.preventDefault();
 
-    // Clear the form inputs
-    sectionTitleInput.value = '';
-    sectionContentInput.value = '';
-    sectionImageInput.value = '';
-  });
+      const sectionTitleInput = document.querySelector('#sectionTitle');
+      const sectionContentInput = document.querySelector('#sectionContent');
+      const sectionImageInput = document.querySelector('#sectionImage');
 
-  // Checks for visible section
-  function isSectionVisible(section) {
-    const rect = section.getBoundingClientRect();
-    return rect.top < window.innerHeight / 2 && rect.bottom >= threshold;
-  }
+      const sectionTitle = sectionTitleInput.value;
+      const sectionContent = sectionContentInput.value;
+      let sectionImage = null;
 
-  // Add event listener to toggle the active state of navigation links
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navLinks a');
-    const asideLinks = document.querySelectorAll('.asideLinks a');
+      if (sectionImageInput.files && sectionImageInput.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          sectionImage = e.target.result;
+          // Call the appendSection function with the user-provided section title, content, and image
+          appendSection(sectionTitle, sectionContent, sectionImage);
+        };
+        reader.readAsDataURL(sectionImageInput.files[0]);
+      } else {
+          //Call the appendSection function with the user-provided section ID, title, content
+          appendSection(sectionTitle, sectionContent);
+      }
+
+      updateNavLinks(sectionTitle);
+
+      // Clear the form inputs
+      sectionTitleInput.value = '';
+      sectionContentInput.value = '';
+      sectionImageInput.value = '';
+
+    });
+
+    // Checks for visible section
+    function isSectionVisible(section) {
+      const rect = section.getBoundingClientRect();
+      return rect.top < window.innerHeight / 2 && rect.bottom >= threshold;
+    }
+
+    // Add event listener to toggle the active state of navigation links
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.navLinks a');
+      const asideLinks = document.querySelectorAll('.asideLinks a');
 
 
       sections.forEach((section, index) => {
         const link = navLinks[index];
         link.removeAttribute('aria-current');
         link.classList.remove('active'); // Remove it
-          if (isSectionVisible(section)) {
-              link.setAttribute('aria-current', 'page');
-              link.classList.add('active'); // Add active state to current section top nav link
-            } else {
-              link.removeAttribute('aria-current');
-              link.classList.remove('active'); // Remove it
-          }
+        if (isSectionVisible(section)) {
+            link.setAttribute('aria-current', 'page');
+            link.classList.add('active'); // Add active state to current section top nav link
+          } else {
+            link.removeAttribute('aria-current');
+            link.classList.remove('active'); // Remove it
+        }
       });
 
-    asideLinks.forEach((link, index) => {
+      asideLinks.forEach((link, index) => {
         if (isSectionVisible(sections[index])) {
           link.setAttribute('aria-current', 'page');
-          link.classList.add('active'); // Add active state to current section top aside nav link
+          link.classList.add('active'); // Add active state to current section aside nav links
         } else {
           link.removeAttribute('aria-current');
           link.classList.remove('active'); // Remove it
         }
+      });
+
+      setActive();
     });
 
-    setActive();
-  });
+    // Adjust the threshold for section visibility
+    const threshold = 0.55;
 
-  // Adjust the threshold for section visibility
-  const threshold = 0.45;
+    // Add event listener to show/hide the scroll-to-top button
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > window.innerHeight * threshold) {
+        scrollToTopBtn.style.display = 'block';
+      } else {
+        scrollToTopBtn.style.display = 'none';
+      }
+    });
 
-  // Add event listener to show/hide the scroll-to-top button
-  const scrollToTopBtn = document.getElementById('scrollToTop');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > window.innerHeight * threshold) {
-      scrollToTopBtn.style.display = 'block';
-    } else {
-      scrollToTopBtn.style.display = 'none';
-    }
-  });
+    // Add event listener to scroll to top when the button is clicked
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
 
-  // Add event listener to scroll to top when the button is clicked
-  scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+window.addEventListener('beforeunload', function() {
+  localStorage.clear()
 });
