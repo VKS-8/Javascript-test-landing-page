@@ -1,24 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Retrieve stored links from local storage
-  const storedLinks = JSON.parse(localStorage.getItem('navLinks')) || [];
-
-  // Function to update navigation links
-  function updateNavLinks(sectionTitle) {
-    // Populate the navigation links dynamically
-    const dropdownMenu = document.querySelectorAll('.hasDropdown');
-
-    dropdownMenu.forEach(dropdownMenu => {
-      const navLink = document.createElement('a');
-      navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
-      navLink.textContent = sectionTitle;
-      dropdownMenu.appendChild(navLink);
-    });
-
-    storedLinks.push(sectionTitle);
-    localStorage.setItem('navLink', JSON.stringify(storedLinks));
-  }
-
   // Get search bar elements
   const searchBar = document.querySelector('#search-bar');
   const searchBarBtn = document.querySelector('#searchBtn');
@@ -86,8 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const toggleAsideButton = document.getElementById('toggleAsideBtn');
   toggleAsideButton.addEventListener('click', toggleAside);
 
-  // Retrieve stored sections from local storage
-  const storedSections = JSON.parse(localStorage.getItem('newSections')) || [];
+  // Function to update navigation links
+  function updateNavLinks(sectionTitle) {
+    // Populate the navigation links dynamically
+    const dropdownNavs = document.querySelectorAll('.dropdownNav');
+
+    dropdownNavs.forEach(dropdownNav => {
+      const navLink = document.createElement('a');
+      navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
+      navLink.textContent = sectionTitle;
+      dropdownNav.appendChild(navLink);
+    });
+  }
 
   // Function to append a new section to the page
   function appendSection(sectionTitle, sectionContent, sectionImage) {
@@ -151,13 +142,13 @@ document.addEventListener('DOMContentLoaded', function() {
           appendSection(sectionTitle, sectionContent);
       }
 
-      appendSection(sectionTitle, sectionContent, sectionImage);
       updateNavLinks(sectionTitle);
 
       // Clear the form inputs
       sectionTitleInput.value = '';
       sectionContentInput.value = '';
       sectionImageInput.value = '';
+
     });
 
     // Checks for visible section
@@ -173,34 +164,34 @@ document.addEventListener('DOMContentLoaded', function() {
       const asideLinks = document.querySelectorAll('.asideLinks a');
 
 
-        sections.forEach((section, index) => {
-          const link = navLinks[index];
-          link.removeAttribute('aria-current');
-          link.classList.remove('active'); // Remove it
-            if (isSectionVisible(section)) {
-                link.setAttribute('aria-current', 'page');
-                link.classList.add('active'); // Add active state to current section top nav link
-              } else {
-                link.removeAttribute('aria-current');
-                link.classList.remove('active'); // Remove it
-            }
-        });
-
-      asideLinks.forEach((link, index) => {
-          if (isSectionVisible(sections[index])) {
+      sections.forEach((section, index) => {
+        const link = navLinks[index];
+        link.removeAttribute('aria-current');
+        link.classList.remove('active'); // Remove it
+        if (isSectionVisible(section)) {
             link.setAttribute('aria-current', 'page');
-            link.classList.add('active'); // Add active state to current section top aside nav link
+            link.classList.add('active'); // Add active state to current section top nav link
           } else {
             link.removeAttribute('aria-current');
             link.classList.remove('active'); // Remove it
-          }
+        }
+      });
+
+      asideLinks.forEach((link, index) => {
+        if (isSectionVisible(sections[index])) {
+          link.setAttribute('aria-current', 'page');
+          link.classList.add('active'); // Add active state to current section aside nav links
+        } else {
+          link.removeAttribute('aria-current');
+          link.classList.remove('active'); // Remove it
+        }
       });
 
       setActive();
     });
 
     // Adjust the threshold for section visibility
-    const threshold = 0.45;
+    const threshold = 0.55;
 
     // Add event listener to show/hide the scroll-to-top button
     const scrollToTopBtn = document.getElementById('scrollToTop');
