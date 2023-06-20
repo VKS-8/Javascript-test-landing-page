@@ -738,6 +738,11 @@ form input {
   font-size: 2rem;
 }
 
+form input[type=file] {
+  height: fit-content;
+  padding: 1.5rem;
+}
+
 form textarea {
   height: 30rem;
   background:#808080;
@@ -760,6 +765,10 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+button[type="submit"]:hover {
+  background: #fcc35a
+}
+
 form #instructions {
   position: relative;
   top: 0.75rem;
@@ -768,10 +777,6 @@ form #instructions {
   font-size: 1.5rem;
   text-align: center;
   line-height: 2rem;
-}
-
-button[type="submit"]:hover {
-  background: #fcc35a
 }
 
 #ctaSection5 {
