@@ -3,6 +3,85 @@
 /* Font Awesome icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
+
+/*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
+/*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*------My code starts here-----------*/
+
+
 * {
   margin: 0;
   padding: 0;
@@ -37,7 +116,7 @@ header {
   position: relative;
   height: 100vh;
   max-width: 1600px;
-  background: pink;
+  background: #ffc0cb;
 }
 
 header img {
@@ -87,96 +166,97 @@ nav img {
 
 nav {
   height: 15vh;
-  width: 99.25%;
+  width: 100%;
   position: fixed;
   z-index: 10;
   margin: 0;
   background: rgba(20, 20, 20, 0.95);
   border: 5px solid rgb(111, 0, 255);
   box-shadow: 0 10px 10px rgba(20, 20, 20, 0.95);
-  }
+}
 
-  nav ul {
-    display: flex;
-    margin: -6.75rem 1rem 1rem auto;
-    width: 70%;
-  }
+nav ul {
+  display: flex;
+  margin: -5.8rem 1rem 1rem auto;
+  width: 70%;
+}
 
-  .navLinks input {
-    position: absolute;
-    top: 5.85rem;
-    left: 7rem;
-    height: 3rem;
-    width: 5rem;
-    border-radius: 10px;
-    padding-left: 1rem;
-    border: none;
-    background: #c9c8c8;
-  }
+.navLinks input {
+  position: absolute;
+  top: 5.85rem;
+  left: 7rem;
+  height: 3rem;
+  width: 5rem;
+  border-radius: 10px;
+  padding-left: 1rem;
+  border: none;
+  background: #c9c8c8;
+}
 
-  .navLinks input:focus {
-    width: 15rem;
-  }
+.navLinks input:focus {
+  width: 15rem;
+}
 
-  .showBtn {
-    display: block;
-    transition: all 0.2s ease;
-  }
+.showBtn {
+  display: block;
+  transition: all 0.2s ease;
+}
 
-  #searchBtn {
-    display: none;
-    position: absolute;
-    top: 8.85rem;
-    left: 20rem;
-    height: 48px;
-    width: 100px;
-    border: none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background: #808080;
-  }
+#searchBtn {
+  display: none;
+  position: absolute;
+  top: 8.85rem;
+  left: 20rem;
+  height: 48px;
+  width: 100px;
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #808080;
+}
 
-  #searchBtn:hover {
-    background: #ffa500
-  }
+#searchBtn:hover {
+  background: #ffa500
+}
 
-  nav ul li {
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
+nav ul li {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
-  nav ul li a{
-    display: block;
-    position: relative;
-    height: 7vh;
-    margin: 0;
-    padding: 0.3rem 1rem;
-    font-size: 1.5rem;
-    align-items: center;
-    border-radius: 10px 10px 0 0;
+nav ul li a{
+  display: block;
+  position: relative;
+  height: 7vh;
+  margin: 0;
+  padding: 0.3rem 1rem;
+  font-size: 1.5rem;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
 
-  }
+}
 
-  nav ul li a:hover {
-    background:rgba(143, 143, 143, 0.3);
-    padding-bottom: 0.5rem;
-    transition: all 0.5s ease;
-  }
+nav ul li a:hover {
+  background:rgba(143, 143, 143, 0.3);
+  padding-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  border-bottom: 5px solid #ffa500;
+}
 
-  nav ul li a.active {
-    border-left: 2px solid #ffa500;
-    border-top: 2px solid #ffa500;
-    border-right: 2px solid #ffa500;
-    border-bottom: 5px solid #ffa500;
-  }
+nav ul li a.active {
+  border-left: 2px solid #ffa500;
+  border-top: 2px solid #ffa500;
+  border-right: 2px solid #ffa500;
+  border-bottom: 5px solid #ffa500;
+}
 
-  nav ul li a.focus {
-    border-left: 2px solid #ffa500;
-    border-top: 2px solid #ffa500;
-    border-right: 2px solid #ffa500;
-    border-bottom: 5px solid #ffa500;
-    outline: none;
-  }
+nav ul li a.focus {
+  border-left: 2px solid #ffa500;
+  border-top: 2px solid #ffa500;
+  border-right: 2px solid #ffa500;
+  border-bottom: 5px solid #ffa500;
+  outline: none;
+}
 
 /* Styles for navigation links and section links */
 .navLinks,
@@ -196,6 +276,18 @@ nav {
   transition: all 0.2s ease;
 }
 
+#topNavDropdown {
+  display: block;
+  position: relative;
+  top: 2.5rem;
+  left: 0;
+  width:fit-content;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 0.75rem 0.75rem 0.75rem 2rem;
+  list-style: none;
+  font-size: 0.75em;
+}
+
 /* Sourced code from this link
   https://css-tricks.com/solved-with-css-dropdown-menus/ */
 
@@ -205,8 +297,8 @@ nav ul #topNavDropdown {
   opacity: 0;
   position: absolute;
   margin-top: 0;
-  padding-top: 1rem 0;
-  top: 7.25rem;
+
+  top: 7rem;
   right: 0;
 }
 
@@ -217,17 +309,17 @@ nav li ul #topNavDropdown:hover {
   visibility: visible;
   opacity: 1;
   border-top: 10px solid #ffa500;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
 }
 
 nav li > #topNavDropdown li:hover {
   position: relative;
-  left: -2rem;
+  left: 0;
   width: 100%;
   text-align: center;
+  color: #222;
   background: #808080;
-  padding-top: 0.5rem;
-  transition: all 0.5s ease;
+  padding-top: 1rem 0;
 }
 
 nav li > #topNavDropdown li a:hover {
@@ -310,18 +402,6 @@ aside {
   border: 2px solid #5e4007;
 }
 
-#topNavDropdown {
-  display: block;
-  position: relative;
-  top: 5rem;
-  left: 0;
-  width:fit-content;
-  background: rgba(20, 20, 20, 0.8);
-  padding: 0.75rem 0.75rem 0.75rem 2rem;
-  list-style: none;
-  font-size: 0.75em;
-}
-
 #asideNavDropdown {
   display: none;
   position: relative;
@@ -344,15 +424,15 @@ aside {
 /* Sourced code from this link
   https://css-tricks.com/solved-with-css-dropdown-menus/ */
 
-  aside ul #topNavDropdown {
+  aside ul #asideNavDropdown {
     display: none;
     visibility: hidden;
     opacity: 0;
     position: absolute;
+    top: 21rem;
+    left: 0;
     margin-top: 0;
-    padding-top: 1rem 0;
-    top: 7.25rem;
-    right: 0;
+    padding: 1rem 0;
   }
 
   aside li:hover > #asideNavDropdown,
@@ -367,13 +447,13 @@ aside {
 
   aside li > #asideNavDropdown li:hover {
     position: relative;
-    left: -2rem;
+    left: 0;
     width: 100%;
     text-align: center;
     background: #808080;
     padding-top: 0.5rem;
     transition: all 0.5s ease;
-    box-shadow: 2px 4px 5px rgba(143, 143, 143, 0.3);
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   }
 
   aside li > #asideNavDropdown li a:hover {
@@ -389,9 +469,9 @@ aside {
 .scrollToTopBtn {
   display: none;
   position: fixed;
-  bottom: 4rem;
+  bottom: 5rem;
   right: 2rem;
-  display: none;
+  z-index: 6;
   height: 70px;
   width: 70px;
   padding: 0.25rem 0 0 0.25rem;
@@ -756,6 +836,7 @@ footer {
   align-items: center;
   max-width: 1600px;
   margin: 0 auto;
+  padding: 0.5rem 0 2rem;
 }
 
 .footerLinks a {
