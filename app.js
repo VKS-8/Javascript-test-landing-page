@@ -73,10 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownNavs = document.querySelectorAll('.dropdownNav');
 
     dropdownNavs.forEach(dropdownNav => {
+      const navListItem = document.createElement('li');
       const navLink = document.createElement('a');
       navLink.href = `#${sectionTitle.toLowerCase().replace(/\s/g,'-')}`;
       navLink.textContent = sectionTitle;
-      dropdownNav.appendChild(navLink);
+      navListItem.appendChild(navLink);
+      dropdownNav.appendChild(navListItem);
     });
   }
 

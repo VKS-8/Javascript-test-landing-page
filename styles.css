@@ -326,7 +326,8 @@ aside {
   display: none;
   position: relative;
   top: -2.5rem;
-  left: 12rem;
+  left: 11rem;
+  width: fit-content;
   background: rgba(20, 20, 20, 0.8);
   padding: 0.75rem;
   list-style: none;
@@ -340,11 +341,49 @@ aside {
   color: #fff;
 }
 
-#asideNavDropdown:hover {
-  display: block;
-  left: 12rem;
-  transition: right 0.3s ease-in-out;
-}
+/* Sourced code from this link
+  https://css-tricks.com/solved-with-css-dropdown-menus/ */
+
+  aside ul #topNavDropdown {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    margin-top: 0;
+    padding-top: 1rem 0;
+    top: 7.25rem;
+    right: 0;
+  }
+
+  aside li:hover > #asideNavDropdown,
+  aside li:focus-within > #asideNavDropdown,
+  aside li ul #asideNavDropdown:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    border-top: 10px solid #ffa500;
+    transition: all 1s ease;
+  }
+
+  aside li > #asideNavDropdown li:hover {
+    position: relative;
+    left: -2rem;
+    width: 100%;
+    text-align: center;
+    background: #808080;
+    padding-top: 0.5rem;
+    transition: all 0.5s ease;
+    box-shadow: 2px 4px 5px rgba(143, 143, 143, 0.3);
+  }
+
+  aside li > #asideNavDropdown li a:hover {
+    border: none;
+  }
+
+  aside li #asideNavDropdown li {
+    clear: both;
+    width: 100%;
+  }
 
 /* Add styles for the scroll-to-top button */
 .scrollToTopBtn {
