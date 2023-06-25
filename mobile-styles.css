@@ -116,66 +116,86 @@ select {
 
   --primary-aside-border: 2px solid #9f9d9d;
   --secondary-aside-border: 2px solid #674401;
-  --aside-background: rgba(0, 0, 0, 0.2);
+  --aside-btn-background-color: rgba(0, 0, 0, 0.2);
+  --aside-btn-hover-color: ;
+  --primary-aside-background-color: rgba(225, 165, 0, 0.8);
+  --secondary-aside-background-color: rgba(20, 20, 20, 0.8);
+  --aside-link-color: #5e4007;
+  --aside-navDropdown-border: #ffa500;
 
---primary-cursor: pointer;
---secondaryA-cursor: grab;
---secondaryB-cursor: grabbing;
---tertiary-cursor: progress;
---zoom-in-cursor: zoom-in;
---zoom-out-cursor: zoom-out;
+  --primary-cursor: pointer;
+  --secondaryA-cursor: grab;
+  --secondaryB-cursor: grabbing;
+  --tertiary-cursor: progress;
+  --zoom-in-cursor: zoom-in;
+  --zoom-out-cursor: zoom-out;
 
-cursor:
+  --primary-border-radius: 30px;
+  --secondary-border-radius: 10px;
+  --tertiary-border-radius: 5px;
+  --round-border-radius: 50%;
+
+  --scrollToTopBtn-background-color: rgba(143, 143, 143, 0.2);
+  --scrollToTopBtn-font-color: #ffa500;
+
+  --h2-font-color: #fcc35a;
+
+  --text-container-background-color: rgba(0, 0, 0, 0.2);
+
+  --section4-background-color: rgba(0, 0, 0, 0.45);
+
+  --challenge-text-shadow: 2px 4px 5px rgba(225, 165, 0, 0.8);
+
 }
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   letter-spacing: 0.25rem;
-}
+} */
 
-body {
+/* body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   position: relative;
   min-height: 100%;  /* Needed for footer positioning */
   background-color: var(--primary-background-color);
-  color: #fff;
-  max-width: 390px;
+  color: var(--light-font-color);
+  max-width: var(--max-width);
   margin: 0 auto;
   overflow-x: hidden;
-}
+} */
 
 /* Remove default link styles */
-a {
+/* a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: var(--primary-font-size);
   padding: 0 0 2rem;
-}
+} */
 
-header {
+/* header {
   grid-row: 1;
   position: relative;
   height: 1000px;
-  max-width: 390px;
+  max-width: var(--max-width);
   padding-top: 6rem;
   background: var(--tertiary-background-color);
-}
+} */
 
-/* Boys planting flags */
+/* Boys planting flags
 header img {
   object-fit: content;
   position: absolute;
   top: 0;
   z-index: 1;
-}
+} */
 
 /* Welcome to.... */
-#heroText {
+/* #heroText {
   position: absolute;
   top: 29rem;
   left: 0;
@@ -185,46 +205,46 @@ header img {
   margin-bottom: 2rem;
   padding: 1rem;
   color: var(--dark-font-color);
-  font-size: large;
+  font-size: var(--primary-font-size);
 }
 
 .skipLink {
   display: none;
-}
+} */
 
 /* Stories of Adventure */
-nav img {
+/* nav img {
   position: relative;
   top: -4rem;
   width: 100%;
   padding: 0;
   margin: 0;
   z-index: 3;
-}
+} */
 
-nav ul li {
+/* nav ul li {
   display: none;
-}
+} */
 
-  main {
-    display: flex;
-    flex-direction: column;
-    grid-row: 2;
-    height: fit-content;
-    padding-bottom: 5rem;
-  }
+/* main {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  height: fit-content;
+  padding-bottom: 5rem;
+} */
 
 /* Styles for the slide-in aside Note: will move to mobile styles */
-#toggleAsideBtn {
+/* #toggleAsideBtn {
   position: relative;
   top: 3rem;
   left: 240px;
   height: 3.75rem;
   width: 4rem;
-  background: var(--aside-background);
+  background: var(--aside-btn-background-color);
   border: var(--primary-aside-border);
-  border-radius: 10px;
-  box-shadow: var(2px 4px 5px rgba(0, 0, 0, 0.3));
+  border-radius: var(--secondary-border-radius);
+  box-shadow: var(--primary-box-shadow);
   font-size: 2.5rem;
   font-weight: var(--bold-font-weight);
   text-align: center;
@@ -250,23 +270,23 @@ nav ul li {
 
 .openClose {
   transform: rotateZ(180deg);
-}
+} */
 
 /* Default styles for the aside */
-aside {
+/* aside {
   position: fixed;
   z-index: 7;
   top: 0;
   left: -250px;
   height: 844px;
   width: 250px;
-  font-size: 2rem;
-  background-color: rgba(225, 165, 0, 0.8);
+  font-size: var(--secondary-font-size);
+  background-color: var(--aside-background-color);
   transition: left 0.3s ease-in-out;
-}
+} */
 
 /* Show the aside */
-.showAside {
+/* .showAside {
   left: 0;
 }
 
@@ -280,13 +300,13 @@ aside {
 }
 
 .asideLinks a {
-  color: #5e4007;
+  color: var(--aside-link-color);
   text-decoration: none;
   padding: 0.25rem;
 }
 
 .asideLinks a.active {
-  border: 2px solid #5e4007;
+  border: 2px solid var(--aside-link-color);
 }
 
 #asideNavDropdown {
@@ -295,7 +315,7 @@ aside {
   top: -2.5rem;
   left: 11rem;
   width: fit-content;
-  background: rgba(20, 20, 20, 0.8);
+  background: var(--secondary-aside-background-color);
   padding: 0.75rem;
   list-style: none;
   font-size: 0.5em;
@@ -305,55 +325,55 @@ aside {
 }
 
 #asideNavDropdown a {
-  color: #fff;
-}
+  color: var(--light-font-color);
+} */
 
 /* Sourced code from this link
   https://css-tricks.com/solved-with-css-dropdown-menus/ */
 
-  aside ul #asideNavDropdown {
-    display: none;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 21.1rem;
-    left: 1.5rem;
-    margin-top: 0;
-    padding: 1rem 0;
-  }
+/* aside ul #asideNavDropdown {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 21.1rem;
+  left: 1.5rem;
+  margin-top: 0;
+  padding: 1rem 0;
+}
 
-  aside li:hover > #asideNavDropdown,
-  aside li:focus-within > #asideNavDropdown,
-  aside li ul #asideNavDropdown:hover {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-    border-top: 10px solid #ffa500;
-    transition: all 1s ease;
-  }
+aside li:hover > #asideNavDropdown,
+aside li:focus-within > #asideNavDropdown,
+aside li ul #asideNavDropdown:hover {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  border-top: 10px solid var(--aside-navDropdown-border);
+  transition: all 1s ease;
+}
 
-  aside li > #asideNavDropdown li:hover {
-    position: relative;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    background: #808080;
-    padding: 0.5rem 0;
-    transition: all 0.5s ease;
-    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-  }
+aside li > #asideNavDropdown li:hover {
+  position: relative;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: var(--secondary-background-color);
+  padding: 0.5rem 0;
+  transition: all 0.5s ease;
+  box-shadow: var(--primary-box-shadow);
+}
 
-  aside li > #asideNavDropdown li a:hover {
-    border: none;
-  }
+aside li > #asideNavDropdown li a:hover {
+  border: none;
+}
 
-  aside li #asideNavDropdown li {
-    clear: both;
-    width: 100%;
-  }
+aside li #asideNavDropdown li {
+  clear: both;
+  width: 100%;
+} */
 
 /* Add styles for the scroll-to-top button */
-.scrollToTopBtn {
+/* .scrollToTopBtn {
   display: none;
   position: fixed;
   bottom: 5rem;
@@ -362,17 +382,17 @@ aside {
   height: 70px;
   width: 70px;
   padding: 0.25rem 0 0 0.25rem;
-  background: rgba(143, 143, 143, 0.2);
+  background: var(--scrollToTopBtn-background-color);
   font-size: 5rem;
-  color: orange;
+  color: var(--scrollToTopBtn-font-color);
   border: none;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  border-radius: var(--round-border-radius);
+  cursor: var(--primary-cursor);
+} */
 
-.scrollToTopBtn:hover {
+/* .scrollToTopBtn:hover {
   background: #fff;
-}
+} */
 
 section {
   position: relative;
@@ -388,7 +408,7 @@ section {
   text-align: start;
   flex-basis: 100% ;
   line-height: 1.75rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: --text-container-background-color;
 }
 
 /* .textOverlay {
@@ -402,7 +422,7 @@ section {
   margin: 2rem auto;
 } */
 
-.flexContainer {
+/* .flexContainer {
   position: relative;
   top: 0;
   display: flex;
@@ -412,20 +432,20 @@ section {
   height: 1300px;
   margin: 0 auto;
   border: 3px solid red;
-}
+} */
 
-.imageContainer {
+/* .imageContainer {
   display: none;
-}
+} */
 
-.textContainer h2 {
+/* .textContainer h2 {
   font-size: 3rem;
   padding: 0.5rem 1rem 2rem;
   height: 10rem;
   margin: 1rem;
-  color: #fcc35a;
+  color: var(--h2-font-color);
   line-height: 3rem;
-}
+} */
 
 /* .textContainer p {
   max-width: 390px;
@@ -437,7 +457,7 @@ section {
 } */
 
 
-.textContainer:nth-child(odd) {
+/* .textContainer:nth-child(odd) {
   position: relative;
   top: 0;
 
@@ -445,37 +465,37 @@ section {
   padding: 2rem 0.25rem;
   margin: 0 auto;
   border: 2px solid blue;
-}
+} */
 
 /* Embark on an extrordinary journey */
 .textContainer:nth-child(even) {
   height: 100px;
-  max-width: 390px;
+  max-width: var(--max-width);
   padding: 2rem 0.25rem;
   margin: 0 auto;
   border: 12px solid greenyellow;
 }
 
-#section:nth-child(odd),
+/* #section:nth-child(odd),
 #section:nth-child(even) {
   align-items: center;
-}
+} */
 
 /* ...is not merely a tale; Are you ready to embark? */
-section:nth-child(odd) h2 {
+/* section:nth-child(odd) h2 {
   height: 3rem;
   margin: 0;
-  color: #fcc35a;
+  color: var(--h2-font-color);
 
-}
+} */
 
-section:nth-child(odd) p {
+/* section:nth-child(odd) p {
   height: 100%;
   margin: 0;
   padding: 5rem 0.25rem 3rem;
-  color: #ffa500;
+  color: var(--scrollToTopBtn-font-color);
   border: 3px solid paleturquoise
-}
+} */
 
 /* section:nth-child(odd) {
   background: rgba(0, 0, 0, 0.2);
@@ -486,19 +506,19 @@ section:nth-child(odd) p {
   border: 5px solid black;
 } */
 
-section:nth-child(even) h2 {
+/* section:nth-child(even) h2 {
   height: 5rem;
   margin: 0;
-  color: #fcc35a;
-  line-height: 2.5rem;
+  color: var(--h2-font-color);
+  line-height: 3rem;
 }
 
 section:nth-child(even) p {
   height: fit-content;
   padding: 2rem 0.25rem 3rem;
-  color: #ffa500;
-  border: 5px solid orange
-}
+  color: var(--aside-navDropdown-border);
+  border: 5px solid var(--scrollToTopBtn-font-color)
+} */
 
 /* #section4 .textContainer {
   height: 100%;
@@ -509,9 +529,9 @@ section:nth-child(even) p {
   top: -5rem;
   left: 0rem;
   height: 85vh;
-  width: 390px;
+  width: var(--max-width);
   padding: 5rem auto;
-  background:rgba(0, 0, 0, 0.45)
+  background:var(--section4-background-color);
 }
 
 #section4 h2 {
@@ -537,14 +557,14 @@ section:nth-child(even) p {
   margin: 0;
 }
 
-#bookTitle {
+/* #bookTitle {
   display: none;
   position: relative;
   top: -12rem;
   left: 0rem;
   padding: 2rem;
   font-size: 7rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--text-container-background-color);
 }
 
 .capitalLetter {
@@ -569,7 +589,7 @@ span #titleFormat {
   height: 10rem;
   width: 100%;
   font-size: 2rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--aside-background-color);
   border: 2px solid yellow;
 }
 
@@ -591,7 +611,7 @@ span #titleFormat {
   position: absolute;
   top: 5rem;
   left: 16rem;
-}
+} */
 
 #section5 h2 {
   position: relative;
@@ -601,7 +621,7 @@ span #titleFormat {
   text-align: center;
   margin: 10rem auto;
   font-size: 2rem;
-  text-shadow: 2px 4px 5px rgba(225, 165, 0, 0.8);
+  text-shadow: var(--challenge-text-shadow);
 }
 
 #section5 p {
@@ -612,7 +632,7 @@ span #titleFormat {
   width: 100%;
   margin: 1rem auto 0;
   padding: 1rem;
-  background:rgba(0, 0, 0, 0.3);
+  background:var(--aside-background-color);
   font-size: 3rem;
   border-radius: 0;
 }
@@ -623,7 +643,7 @@ span #titleFormat {
   left: 0;
   width: 100%;
   margin: 2rem auto;
-  font-size: 2rem;
+  font-size: var(--secondary-font-size);
 }
 
 form #sectionTitle,
@@ -632,7 +652,7 @@ form #sectionImage {
   display: block;
   width: 100%;
   margin: 1.5rem auto;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--primary-box-shadow);
 }
 
 form label {
@@ -643,8 +663,8 @@ form input {
   height: 3rem;
   padding: 2rem;
   border-radius: 10px;
-  background:#808080;
-  font-size: 2rem;
+  background:var(--secondary-background-color);
+  font-size: var(--secondary-font-color);
 }
 
 form input[type=file] {
@@ -654,9 +674,9 @@ form input[type=file] {
 
 form textarea {
   height: 30rem;
-  background:#808080;
+  background:var(--secondary-background-color);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: var(--secondary-border-radius);
   font-size: 1.5rem;
   line-height: 2.5rem;
 }
@@ -667,15 +687,15 @@ button[type="submit"] {
   width: 100px;
   margin: 0 0 5rem auto;
   padding: 0.25rem;
-  border-radius: 50%;
+  border-radius: var(--round-border-radius);
   font-size: 1rem;
-  border: 3px solid #808080;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+  border: 3px solid var(--secondary-background-color);
+  box-shadow: var(--primary-box-shadow);
   cursor: pointer;
 }
 
 button[type="submit"]:hover {
-  background: #fcc35a
+  background: var(--h2-font-color);
 }
 
 form #instructions {
@@ -695,7 +715,7 @@ form #instructions {
   width: 100%;
   margin: 2rem auto;
   text-align: center;
-  font-size: 3rem;
+  font-size: var(--primary-font-size);
 }
 
 #challengeContainer {
@@ -706,14 +726,14 @@ form #instructions {
   height: 100vh;
   width: 100%;
   margin: 0 auto;
-  background: pink;
+  background: var(--tertiary-background-color);
 }
 
 #challengeContainer h2 {
   position: relative;
   top: 0;
   left: 0;
-  font-size: 2rem;
+  font-size: var(--secondary-font-size);
   margin: 0 auto;
 }
 
@@ -722,14 +742,14 @@ form #instructions {
   top: 2.25rem;
   left: 15rem;
   max-width: 100vh;
-  font-size: 2rem;
+  font-size: var(--secondary-font-size);
 }
 
 #challengeContainer img {
   position: relative;
   top: -5rem;
-  border-radius: 10px;
-  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+  border-radius: var(--secondary-border-radius);
+  box-shadow: var(--primary-box-shadow);
 }
 
 footer {
@@ -742,8 +762,8 @@ footer {
   left: 0;
   z-index: 5;
   width: 68%;
-  background: rgba(0, 0, 0, 0.45);
-  color: #fff;
+  background: var(--section4-background-color);
+  color: var(--light-font-color);
   margin: 0 auto;
   padding: 0.5rem;
 }
@@ -754,7 +774,7 @@ footer {
   bottom: 0;
   justify-content: center;
   align-items: center;
-  max-width: 390px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0.5rem 0 2rem;
 }
@@ -765,8 +785,8 @@ footer {
   position: relative;
   top: 0;
   left: 10rem;
-  color: #fff;
-  cursor: pointer;
+  color: var(--light-font-color);
+  cursor: var(--primary-cursor);
   line-height: 3rem;
   margin-bottom: 1rem;
 }
@@ -775,11 +795,11 @@ footer {
   position: relative;
   top: 0;
   left: 3rem;
-  color: #fff;
+  color: var(--light-font-color);
   text-decoration: none;
   margin: 0 auto;
   padding: 2rem;
-  cursor: pointer;
+  cursor: var(--primary-cursor);
 }
 
 .footerCopyright {
@@ -790,6 +810,6 @@ footer {
 }
 
 .footerCopyright p {
-  font-size: 1rem;
+  font-size: var(--tertiary-font-size);
 }
 

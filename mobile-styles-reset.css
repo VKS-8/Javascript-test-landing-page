@@ -1,0 +1,509 @@
+/* Mobile display: 390 x 844 */
+
+/* Font Awesome icons */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
+
+/*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
+/*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*------My code starts here-----------*/
+:root {
+
+  --max-width: 390px;
+  --max-height: 844px;
+
+  --color-1: #ffa500;
+  --color-2: #fcc35a;
+  --color-3: #5e4007;
+  --color-4: #808080;
+  --color-5: #ffc0cb;
+  --color-6: #222;
+  --light-color: #fff;
+  --dark-color: rgb(30, 29, 29);
+
+  --transparent-color-1: rgba(0, 0, 0, 0.2);
+  --transparent-color-2: rgba(143, 143, 143, 0.2);
+  --transparent-color-3: rgba(225, 165, 0, 0.8);
+  --transparent-color-4: rgba(20, 20, 20, 0.8);
+  --transparent-color-5: rgba(0, 0, 0, 0.45);
+
+  --primary-box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  --challenge-text-shadow: 2px 4px 5px rgba(225, 165, 0, 0.8);
+
+  --primary-font-size: 1rem;
+  --secondary-font-size: 0.5rem;
+  --tertiary-font-size: 0.25rem;
+  --aside-btn-font-size: 2rem;
+  --aside-font-size: 1rem;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 2rem;
+
+  --primary-font-weight: 400;
+  --bold-font-weight: 900;
+
+  /* --primary-font-color: ;
+  --secondary-font-color: ;
+  --tertiary-font-color: #ffc0cb;
+  --h2-font-color: #fcc35a;
+  --scrollToTopBtn-font-color: #ffa500;
+  --aside-link-font-color: #5e4007;
+
+  --primary-background-color: #222;
+  --secondary-background-color: #808080;
+  --tertiary-background-color: #ffc0cb;
+  --primary-transparent-bkgrnd-color: rgba(0, 0, 0, 0.2);
+  --scrollToTopBtn-background-color: rgba(143, 143, 143, 0.2);
+  --primary-aside-background-color: rgba(225, 165, 0, 0.8);
+  --secondary-aside-background-color: rgba(20, 20, 20, 0.8);
+  --aside-btn-background-color: rgba(0, 0, 0, 0.2);
+  --aside-btn-hover-color: ;
+  --section4-background-color: rgba(0, 0, 0, 0.45); */
+
+  --large-image-size: 100%;
+  --medium-image-size: 70%;
+  --thumbnail-image-size: 50%;
+  --button-image-size: 25%;
+
+  --primary-aside-border: 2px solid #9f9d9d;
+  --secondary-aside-border: 2px solid #674401;
+  --aside-navDropdown-border: #ffa500;
+
+  --primary-cursor: pointer;
+  --secondaryA-cursor: grab;
+  --secondaryB-cursor: grabbing;
+  --tertiary-cursor: progress;
+  --zoom-in-cursor: zoom-in;
+  --zoom-out-cursor: zoom-out;
+
+  --primary-border-radius: 30px;
+  --secondary-border-radius: 10px;
+  --tertiary-border-radius: 5px;
+  --round-border-radius: 50%;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.25rem;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  min-height: 100%;  /* Needed for footer positioning */
+  background-color: var(--primary-background-color);
+  color: var(--light-font-color);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+header {
+  grid-row: 1;
+  position: relative;
+  height: 1300px;
+  max-width: var(--max-width);
+  padding-top: 6rem;
+  background: var(--color-5);
+}
+
+/* Boys planting flags */
+header img {
+  object-fit: content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: var(--max-width);
+  z-index: 1;
+}
+
+h1 {
+  position: relative;
+  left: -1.25rem;
+  font-size: var(--h1-font-size);
+  margin: 0 0 1.5rem;
+  line-height: 1;
+}
+
+/* Welcome to.... */
+#heroText {
+  position: absolute;
+  top: 27rem;
+  left: 0;
+  z-index: 4;
+  height: fit-content;
+  width: 95%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: var(--dark-font-color);
+  font-size: var(--primary-font-size);
+  line-height: 1.75;
+}
+
+.skipLink {
+  display: none;
+}
+
+/* Stories of Adventure */
+nav img {
+  position: relative;
+  top: -3rem;
+  left: -1rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  z-index: 3;
+}
+
+nav ul li {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2;
+  height: fit-content;
+  padding-bottom: 5rem;
+}
+
+/* Styles for the slide-in aside Note: will move to mobile styles */
+#toggleAsideBtn {
+  position: relative;
+  top: 3rem;
+  left: 240px;
+  height: 3.5rem;
+  width: 3.5rem;
+  background: var(--transparent-color-1);
+  border: var(--primary-aside-border);
+  border-radius: var(--secondary-border-radius);
+  box-shadow: var(--primary-box-shadow);
+  font-size: var(--aside-btn-font-size);
+  font-weight: var(--bold-font-weight);
+  text-align: center;
+  color: var(--color-2);
+  cursor: var(--primary-cursor);
+}
+
+#toggleAsideBtn:hover {
+  background: var(--color-4);
+}
+
+#toggleAsideBtn:focus {
+  outline: none;
+  border: var(--secondary-aside-border);
+  color: var(--secondary-color);
+}
+
+.asideOpened {
+  left: 250px;
+  transition: right 0.3s ease-in-out;
+}
+
+.openClose {
+  transform: rotateZ(180deg);
+}
+
+/* Default styles for the aside */
+aside {
+  position: fixed;
+  z-index: 7;
+  top: 0;
+  left: -250px;
+  height: 350px;
+  width: 250px;
+  font-size: var(--aside-font-size);
+  background-color: var(--transparent-color-3);
+  transition: left 0.3s ease-in-out;
+}
+
+/* Show the aside */
+.showAside {
+  left: 0;
+}
+
+.asideLinks {
+  list-style: none;
+  padding: 2rem;
+}
+
+.asideLinks li {
+  margin-bottom: 1.5rem;
+}
+
+.asideLinks a {
+  color: var(--color-3);
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.asideLinks a.active {
+  border: 2px solid var(--color-3);
+}
+
+#asideNavDropdown {
+  display: none;
+  position: relative;
+  top: -2.5rem;
+  left: 11rem;
+  width: fit-content;
+  background: var(--transparent-color-4);
+  padding: 0.5rem;
+  list-style: none;
+  font-size: 0.5em;
+  text-align: center;
+  transition: left 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#asideNavDropdown a {
+  color: var(--light-font-color);
+}
+
+/* Sourced code from this link
+  https://css-tricks.com/solved-with-css-dropdown-menus/ */
+
+aside ul #asideNavDropdown {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 21.1rem;
+  left: 1.5rem;
+  margin-top: 0;
+  padding: 1rem 0;
+}
+
+aside li:hover > #asideNavDropdown,
+aside li:focus-within > #asideNavDropdown,
+aside li ul #asideNavDropdown:hover {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  border-top: 10px solid var(--aside-navDropdown-border);
+  transition: all 1s ease;
+}
+
+aside li > #asideNavDropdown li:hover {
+  position: relative;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: var(--color-4);
+  padding: 0.5rem 0;
+  transition: all 0.5s ease;
+  box-shadow: var(--primary-box-shadow);
+}
+
+aside li > #asideNavDropdown li a:hover {
+  border: none;
+}
+
+aside li #asideNavDropdown li {
+  clear: both;
+  width: 100%;
+}
+
+  /* Add styles for the scroll-to-top button */
+.scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  z-index: 8;
+  height: 70px;
+  width: 70px;
+  padding: 0.25rem 0 0 0.25rem;
+  background: var(--transparent-color-2);
+  font-size: 5rem;
+  color: var(--color-1);
+  border: none;
+  border-radius: var(--secondary-border-radius);
+  cursor: var(--primary-cursor);
+}
+
+/* Section styles */
+
+section {
+  position: relative;
+  height: fit-content;
+  width: 75%;
+  margin: 0;
+  padding: 2rem;
+  align-items: center;
+  background: var(--transparent-color-4);
+}
+
+.imageContainer {
+  display: none;
+}
+
+.textContainer h2 {
+  font-size: var(--h2-font-size);
+  padding: 0.5rem 0 2rem;
+  height: auto;
+  width: 100%;
+  margin: 0;
+  color: var(--color-2);
+  line-height: 2rem;
+}
+
+.textContainer p {
+  line-height: 1.75rem;
+  color: var(--color-1)
+}
+
+#section2 h2 {
+  margin-bottom: -1rem;
+}
+
+#section4 {
+  padding: 0;
+}
+
+#section4 .textOverlay {
+  padding: 2rem;
+  width: 100%;
+  background:var(--transparent-color-5);
+}
+
+#section4 p {
+  height: 500px;
+  text-align: center;
+}
+
+#bookTitle {
+  display: none;
+  position: relative;
+  top: -2rem;
+  left: 0rem;
+  width: 100%;
+  padding: 0;
+  background: var(--text-container-background-color);
+}
+
+.capitalLetter {
+  font-size: 7rem;
+}
+
+span #titleFormat {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.quoteMark {
+  font-size: 10rem;;
+}
+
+#cta {
+  display: block;
+  position: relative;
+  top: 2rem;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  margin: 0 0 3rem;
+  font-size: 1.5rem;
+  background: var(--transparent-color-5);
+}
+
+#cta .capitalLetter {
+  font-size: 3rem;
+}
+
+#ctaTitleFormat {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  /* padding: 1rem; */
+}
+
+#cta .quoteMark {
+  font-size: 3rem;;
+}
+
+#ctaCloseQuote {
+  position: absolute;
+  top: 5rem;
+  left: 18rem;
+}
+
+.spacer {
+  display: none;
+}
