@@ -244,7 +244,7 @@ main {
 /* Styles for the slide-in aside Note: will move to mobile styles */
 #toggleAsideBtn {
   position: relative;
-  top: 3rem;
+  top: 20rem;
   left: 240px;
   height: 3.5rem;
   width: 3.5rem;
@@ -659,8 +659,8 @@ footer {
   z-index: 5;
   height: 100vh;
   width: 100%;
-  background: var(--section4-background-color);
-  color: var(--light-font-color);
+  background: var(--transparent-color-3);
+  color: var(--dark-color);
   margin: 0 auto;
   padding: 0.5rem;
 }
@@ -681,7 +681,7 @@ footer {
   position: relative;
   top: 0;
   left: 5rem;
-  color: var(--light-font-color);
+  color: var(--dark-color);
   cursor: var(--primary-cursor);
   line-height: 3rem;
   margin-bottom: 1rem;
@@ -691,7 +691,7 @@ footer {
   position: relative;
   top: 0;
   left: 0;
-  color: var(--light-font-color);
+  color: var(--dark-color);
   text-decoration: none;
   margin: 0 auto;
   padding: 2rem;
