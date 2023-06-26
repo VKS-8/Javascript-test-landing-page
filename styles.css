@@ -3,8 +3,7 @@
 /* Font Awesome icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
-/* Mobile styles */
-@import url("mobile-styles.css");
+
 
 /*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
 /*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
@@ -870,3 +869,7 @@ footer {
   font-size: 1rem;
 }
 
+@media screen and (minmax-width: 390px) {
+  /* Mobile styles */
+@import url("mobile-styles.css");
+}
