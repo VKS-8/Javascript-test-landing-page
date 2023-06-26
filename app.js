@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         reader.readAsDataURL(sectionImageInput.files[0]);
       } else {
-          //Call the appendSection function with the user-provided section ID, title, content
+          //Call the appendSection function with the user-provided section title, content
           appendSection(sectionTitle, sectionContent);
       }
 
