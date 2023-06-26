@@ -324,14 +324,14 @@ aside {
   background: var(--transparent-color-4);
   padding: 0.5rem;
   list-style: none;
-  font-size: 0.5em;
+  font-size: 0.75em;
   text-align: center;
   transition: left 0.3s ease-in-out;
   cursor: pointer;
 }
 
 #asideNavDropdown a {
-  color: var(--light-font-color);
+  color: var(--light-color);
 }
 
 /* Sourced code from this link
@@ -490,7 +490,6 @@ span #titleFormat {
   position: absolute;
   top: 5rem;
   left: 5rem;
-  /* padding: 1rem; */
 }
 
 #cta .quoteMark {
@@ -500,7 +499,7 @@ span #titleFormat {
 #ctaCloseQuote {
   position: absolute;
   top: 5rem;
-  left: 18rem;
+  left: 17.5rem;
 }
 
 .spacer {
@@ -657,7 +656,7 @@ footer {
   bottom: -50rem;
   left: -3rem;
   z-index: 5;
-  height: 100vh;
+  height: 75vh;
   width: 100%;
   background: var(--transparent-color-3);
   color: var(--dark-color);
