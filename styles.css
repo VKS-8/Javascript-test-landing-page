@@ -338,6 +338,7 @@ nav li #topNavDropdown li {
 
 /* Styles for the slide-in aside Note: will move to mobile styles */
 #toggleAsideBtn {
+  display: none;
   position: relative;
   top: 5rem;
   left: 240px;
