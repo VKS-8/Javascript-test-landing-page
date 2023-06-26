@@ -239,7 +239,6 @@ main {
   flex-direction: column;
   grid-row: 2;
   height: fit-content;
-  padding-bottom: 5rem;
 }
 
 /* Styles for the slide-in aside Note: will move to mobile styles */
@@ -649,4 +648,69 @@ form #instructions {
   border-radius: var(--secondary-border-radius);
   box-shadow: var(--primary-box-shadow);
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  grid-row: 3;
+  position: sticky;
+  bottom: -50rem;
+  left: -3rem;
+  z-index: 5;
+  height: 100vh;
+  width: 100%;
+  background: var(--section4-background-color);
+  color: var(--light-font-color);
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.footerContainer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.5rem 0 2rem;
+}
+
+.footerLinks a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 0;
+  left: 5rem;
+  color: var(--light-font-color);
+  cursor: var(--primary-cursor);
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.footerSocial a {
+  position: relative;
+  top: 0;
+  left: 0;
+  color: var(--light-font-color);
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 2rem;
+  cursor: var(--primary-cursor);
+}
+
+.footerCopyright {
+  position: relative;
+  top: 0;
+  left: -3.5rem;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 2rem auto;
+  line-height: 2rem;
+}
+
+.footerCopyright p {
+  font-size: var(--tertiary-font-size);
+}
+
+
 
