@@ -383,7 +383,7 @@ aside li #asideNavDropdown li {
   display: none;
   position: fixed;
   bottom: 5rem;
-  right: 1rem;
+  right: 6rem;
   z-index: 8;
   height: 70px;
   width: 70px;
