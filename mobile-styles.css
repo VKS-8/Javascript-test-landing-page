@@ -383,7 +383,7 @@ aside li #asideNavDropdown li {
   display: none;
   position: fixed;
   bottom: 5rem;
-  right: 6rem;
+  right: 1.5rem;
   z-index: 8;
   height: 70px;
   width: 70px;
@@ -401,7 +401,7 @@ aside li #asideNavDropdown li {
 section {
   position: relative;
   height: fit-content;
-  width: 75%;
+  width: var(--max-width);
   margin: 0;
   padding: 2rem;
   align-items: center;
@@ -508,6 +508,10 @@ span #titleFormat {
 
 /* Challenge Section */
 
+#section5 {
+  width: var(--max-width);
+}
+
 #section5 h2 {
   text-align: center;
   margin: 1.5rem auto;
@@ -564,6 +568,7 @@ form input[type=file] {
 
 form textarea {
   height: 30rem;
+  max-width: 90%;
   background:var(--secondary-background-color);
   padding: 2rem;
   border-radius: var(--secondary-border-radius);
@@ -610,14 +615,19 @@ form #instructions {
 }
 
 #challengeContainer {
-  position: relative;
-  top: -3rem;
-  left: 0;
+  display: flex;
+  flex-direction: column;
   z-index: 1;
-  height: 75vh;
   max-width: var(--max-width);
   margin: 0;
   background: var(--tertiary-background-color);
+}
+
+#challengeContainer section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
 }
 
 #challengeContainer h2 {
@@ -627,9 +637,8 @@ form #instructions {
 }
 
 #challengeContainer p {
-  position: relative;
-  top: 2rem;
-  left: 0;
+
+  width: 100%;
   margin: 0.5rem auto;
   font-size: var(--secondary-font-size);
   overflow-wrap: break-word;
@@ -637,8 +646,6 @@ form #instructions {
 }
 
 #challengeContainer img {
-  position: relative;
-  top: -4rem;
   border-radius: var(--secondary-border-radius);
   box-shadow: var(--primary-box-shadow);
 }
@@ -660,12 +667,8 @@ footer {
 }
 
 .footerContainer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  align-items: center;
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 0;
   padding: 0.5rem 0 2rem;
 }
 
@@ -674,7 +677,7 @@ footer {
   flex-direction: column;
   position: relative;
   top: 0;
-  left: -4rem;
+  left: 0;
   color: var(--dark-color);
   cursor: var(--primary-cursor);
   line-height: 3rem;
@@ -686,27 +689,23 @@ footer {
 .footerSocial a {
   position: relative;
   top: 0;
-  left: 0;
+  left: 10%;
   color: var(--dark-color);
   text-decoration: none;
   margin: 0 auto;
   padding: 2rem;
   cursor: var(--primary-cursor);
+  border: 2px solid red;
 }
 
 .footerCopyright {
   position: relative;
   top: 0;
-  left: -3.5rem;
+  left: 0;
   margin: 2rem auto;
   text-align: center;
   padding: 2rem auto;
   line-height: 2rem;
 }
-
-.footerCopyright p {
-  font-size: ;
-}
-
 
 
