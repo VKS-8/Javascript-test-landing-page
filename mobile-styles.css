@@ -695,7 +695,6 @@ footer {
   margin: 0 auto;
   padding: 2rem;
   cursor: var(--primary-cursor);
-  border: 2px solid red;
 }
 
 .footerCopyright {
