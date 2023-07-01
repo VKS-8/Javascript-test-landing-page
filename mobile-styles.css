@@ -25,12 +25,12 @@
     --primary-box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
     --challenge-text-shadow: 1px 3px 3px rgba(225, 165, 0, 0.8);
 
-    --primary-font-size: 1rem;
+    --primary-font-size: 0.9rem;
     --secondary-font-size: 0.5rem;
     --tertiary-font-size: 0.25rem;
     --aside-btn-font-size: 2rem;
     --aside-font-size: 1rem;
-    --h1-font-size: 2.5rem;
+    --h1-font-size: 2.25rem;
     --h2-font-size: 2rem;
 
     --primary-font-weight: 400;
@@ -85,7 +85,7 @@
 
   header {
     height: 1300px;
-    max-width: var(--max-width);
+    width: var(--max-width);
     padding-top: 6rem;
     background: var(--color-5);
   }
@@ -95,27 +95,28 @@
     position: absolute;
     top: 0;
     left: 0;
-    max-width: var(--max-width);
+    width: var(--max-width);
     z-index: 1;
   }
 
   h1 {
     position: relative;
-    left: -1.25rem;
+    left: 0;
     font-size: var(--h1-font-size);
-    margin: 0 0 1.5rem;
+    margin: 0 auto 1.5rem;
+    padding: 0;
     line-height: 1;
   }
 
   /* Welcome to.... */
   #heroText {
     position: absolute;
-    top: 27rem;
+    top: 28rem;
     left: 0;
     z-index: 4;
     height: fit-content;
-    width: 95%;
-    margin: 0 auto;
+    width:fit-content;
+    margin: 0;
     padding: 0 2rem;
     color: var(--dark-font-color);
     font-size: var(--primary-font-size);
@@ -131,7 +132,7 @@
     position: relative;
     top: -3rem;
     left: -1rem;
-    width: 100%;
+    width: var(--max-width);
     padding: 0;
     margin: 0;
     z-index: 3;
@@ -146,6 +147,7 @@
     flex-direction: column;
     grid-row: 2;
     height: fit-content;
+    width: var(--max-width);
   }
 
   /* Styles for the slide-in aside Note: will move to mobile styles */
@@ -194,7 +196,7 @@
     height: 844px;
     width: 250px;
     font-size: var(--aside-font-size);
-    background-color: var(--transparent-color-3);
+    background-color: var(--color-2);
     transition: left 0.3s ease-in-out;
   }
 
@@ -308,7 +310,7 @@
   section {
     position: relative;
     height: fit-content;
-    width: 75%;
+    width: 80%;
     margin: 0;
     padding: 2rem;
     align-items: center;
@@ -339,11 +341,16 @@
   }
 
   #section4 {
+    width: 100%;
     padding: 0;
   }
 
+  #section4 img {
+    width: var(--max-width);
+  }
+
   #section4 .textOverlay {
-    padding: 2rem;
+    padding: 0;
     width: 100%;
     background:var(--transparent-color-5);
   }
@@ -418,6 +425,7 @@
     position: relative;
     top: 0;
     left: 0;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -425,6 +433,7 @@
   #section5 h2 {
     text-align: center;
     margin: 1.5rem auto;
+    padding: 0 0.5rem;
     font-size: var(--h2-font-size);
     color: var(--light-color);
   }
@@ -501,7 +510,7 @@
   form #instructions {
     position: relative;
     top: 0.75rem;
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
     font-size: 1.5rem;
     text-align: center;
@@ -521,26 +530,23 @@
   #challengeContainer {
     position: relative;
     top: -3rem;
-    left: 2.5rem;
+    left: 0;
     z-index: 1;
-    height: 75vh;
+    height: fit-content;
     max-width: var(--max-width);
     margin: 0;
     background: var(--tertiary-background-color);
   }
 
   #challengeContainer h2 {
-    /* position: relative;
-    top: 0;
-    left: 0; */
     text-align: center;
-    font-size: var(--secondary-font-size);
+    font-size: var(--h2-font-size);
     margin: 0 auto;
   }
 
   #challengeContainer p {
     position: relative;
-    top: 20rem;
+    top: 18rem;
     left: 0;
     margin: 0.5rem auto;
     font-size: var(--secondary-font-size);
@@ -550,7 +556,9 @@
 
   #challengeContainer img {
     position: relative;
-    top: -4rem;
+    top: -6rem;
+    left: -5.25rem;
+    transform: scale(0.65);
     border-radius: var(--secondary-border-radius);
     box-shadow: var(--primary-box-shadow);
   }
@@ -564,11 +572,11 @@
     left: -3rem;
     z-index: 5;
     height: 75vh;
-    width: 100%;
+    width: var(--max-width);
     background: var(--transparent-color-3);
     color: var(--dark-color);
     margin: 0 auto;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 10rem;
   }
 
   .footerContainer {
@@ -607,7 +615,7 @@
   .footerCopyright {
     position: relative;
     top: 0;
-    left: -3.5rem;
+    left: 0;
     margin: 2rem auto;
     text-align: center;
     padding: 2rem auto;
