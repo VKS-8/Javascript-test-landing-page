@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // Get search bar elements
-  const searchBar = document.querySelector('#search-bar');
-  const searchBarBtn = document.querySelector('#searchBtn');
+  // const searchBar = document.querySelector('#search-bar');
+  // const searchBarBtn = document.querySelector('#searchBtn');
 
   // Add event listener to the search bar
-  searchBar.addEventListener('click', showBtn);
+  // searchBar.addEventListener('click', showBtn);
 
   // Function to show the submit button when search bar opens
-  function showBtn() {
-    setTimeout(searchBarBtn.classList.add('showBtn'), 3000);
-  }
+  // function showBtn() {
+  //   setTimeout(searchBarBtn.classList.add('showBtn'), 3000);
+  // }
 
   // Set active state on sections as they scroll into view
   window.addEventListener('scroll', setActive);
