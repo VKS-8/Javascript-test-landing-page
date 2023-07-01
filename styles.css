@@ -233,6 +233,10 @@ nav ul li a.focus {
   transition: all 0.2s ease;
 }
 
+#topNav {
+  width: 1600px;
+}
+
 #topNavDropdown {
   display: none;
   position: relative;
