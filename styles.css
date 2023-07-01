@@ -4,42 +4,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
 
-/*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
-/*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
-
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
 }
@@ -159,7 +123,7 @@ nav img {
 }
 
 nav {
-  height: 15vh;
+  height: 16vh;
   width: 100%;
   position: fixed;
   z-index: 10;
@@ -271,7 +235,7 @@ nav ul li a.focus {
 }
 
 #topNavDropdown {
-  display: block;
+  display: none;
   position: relative;
   top: 2.5rem;
   left: 0;
@@ -291,7 +255,6 @@ nav ul #topNavDropdown {
   opacity: 0;
   position: absolute;
   margin-top: 0;
-
   top: 7rem;
   right: 0;
 }
@@ -332,6 +295,7 @@ nav li #topNavDropdown li {
 
 /* Styles for the slide-in aside Note: will move to mobile styles */
 #toggleAsideBtn {
+  display: none;
   position: relative;
   top: 5rem;
   left: 240px;
@@ -405,7 +369,7 @@ aside {
   background: rgba(20, 20, 20, 0.8);
   padding: 0.75rem;
   list-style: none;
-  font-size: 0.75em;
+  font-size: 0.5em;
   text-align: center;
   transition: left 0.3s ease-in-out;
   cursor: pointer;
@@ -423,8 +387,8 @@ aside {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 21rem;
-    left: 0;
+    top: 21.1rem;
+    left: 1.5rem;
     margin-top: 0;
     padding: 1rem 0;
   }
@@ -445,7 +409,7 @@ aside {
     width: 100%;
     text-align: center;
     background: #808080;
-    padding-top: 0.5rem;
+    padding: 0.5rem 0;
     transition: all 0.5s ease;
     box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
   }
@@ -696,6 +660,7 @@ span #titleFormat {
   height: fit-content;
   width: 80%;
   margin: 2rem auto 0;
+  padding: 1rem;
   background:rgba(0, 0, 0, 0.3);
   font-size: 3rem;
   border-radius: 10px;
@@ -732,6 +697,11 @@ form input {
   font-size: 2rem;
 }
 
+form input[type=file] {
+  height: fit-content;
+  padding: 1.5rem;
+}
+
 form textarea {
   height: 30rem;
   background:#808080;
@@ -754,6 +724,10 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+button[type="submit"]:hover {
+  background: #fcc35a
+}
+
 form #instructions {
   position: relative;
   top: 0.75rem;
@@ -762,10 +736,6 @@ form #instructions {
   font-size: 1.5rem;
   text-align: center;
   line-height: 2rem;
-}
-
-button[type="submit"]:hover {
-  background: #fcc35a
 }
 
 #ctaSection5 {
@@ -783,14 +753,15 @@ button[type="submit"]:hover {
   height: 15vh;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 5rem;
   background: pink;
 }
 
 #challengeContainer h2 {
   position: relative;
   top: 0;
-  left: 15rem;
-  font-size: 3rem;
+  left: 41rem;
+  font-size: 2rem;
   margin: 0 auto;
 }
 
@@ -855,4 +826,3 @@ footer {
 .footerCopyright p {
   font-size: 1rem;
 }
-
