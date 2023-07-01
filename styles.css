@@ -3,7 +3,7 @@
 /* Font Awesome icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
-
+@import url("mobile-styles.css");
 
 /*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
 /*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
@@ -162,11 +162,11 @@ header img {
 nav img {
   height: 6.5rem;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 0;
 }
 
 nav {
-  height: 15vh;
+  height: 16vh;
   width: 100%;
   position: fixed;
   z-index: 10;
@@ -178,8 +178,8 @@ nav {
 
 nav ul {
   display: flex;
-  margin: -5.8rem 1rem 1rem auto;
-  width: 70%;
+  margin: -5.5rem 0 0 auto;
+  width: 80%;
 }
 
 .navLinks input {
@@ -867,9 +867,4 @@ footer {
 
 .footerCopyright p {
   font-size: 1rem;
-}
-
-@media screen and (minmax-width: 390px) {
-  /* Mobile styles */
-@import url("mobile-styles.css");
 }
