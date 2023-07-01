@@ -1,8 +1,10 @@
 /* Desktop display: 1600 x 900 */
-
+@import url("mobile-styles.css");
 /* Font Awesome icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
+/*---------------Andy Bell Reset etc code; some code has been modified by me----------*/
+/*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
 
 body {
   text-rendering: optimizeSpeed;
@@ -616,7 +618,7 @@ span #titleFormat {
 #cta {
   display: block;
   position: absolute;
-  top: 11rem;
+  top: 9rem;
   left: -8rem;
   height: 15rem;
   width: 50rem;
@@ -641,7 +643,7 @@ span #titleFormat {
 #ctaCloseQuote {
   position: absolute;
   top: 5rem;
-  left: 28.5rem;
+  left: 25.5rem;
 }
 
 #section5 h2 {
