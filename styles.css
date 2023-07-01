@@ -869,7 +869,3 @@ footer {
   font-size: 1rem;
 }
 
-@media screen and (minmax-width: 390px) {
-  /* Mobile styles */
-@import url("mobile-styles.css");
-}
