@@ -45,14 +45,7 @@ select {
 
 /*------My code starts here-----------*/
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
->>>>>>> 9382dfbca8463edfc21c26cc43872cee0617dfc2
-=======
-
->>>>>>> 1aa3cb927fa4941dadbe5e68524a30d4d05b937d
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
