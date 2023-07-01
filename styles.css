@@ -619,7 +619,7 @@ span #titleFormat {
 #cta {
   display: block;
   position: absolute;
-  top: 11rem;
+  top: 9rem;
   left: -8rem;
   height: 15rem;
   width: 50rem;
@@ -644,7 +644,7 @@ span #titleFormat {
 #ctaCloseQuote {
   position: absolute;
   top: 5rem;
-  left: 28.5rem;
+  left: 25.5rem;
 }
 
 #section5 h2 {
