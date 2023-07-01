@@ -45,7 +45,10 @@ select {
 
 /*------My code starts here-----------*/
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9382dfbca8463edfc21c26cc43872cee0617dfc2
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
