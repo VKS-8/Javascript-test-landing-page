@@ -3,44 +3,9 @@
 /* Font Awesome icons */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
-
-
-/*---------------Andy Bell Reset etc code; it's beautiful, it works, yes! Fixed some of my issues----------*/
+/*---------------Andy Bell Reset etc code; some code has been modified by me----------*/
 /*---------------Go here to get the code:  https://piccalil.li/blog/a-modern-css-reset/ -------------------*/
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
   text-rendering: optimizeSpeed;
 }
@@ -82,12 +47,6 @@ select {
 
 /*------My code starts here-----------*/
 
-
-* {
-  margin: 0;
-  padding: 0;
-  letter-spacing: 0.25rem;
-}
 
 body {
   display: grid;
@@ -160,13 +119,13 @@ header img {
 }
 
 nav img {
-  height: 6.5rem;
+  height: 6.25rem;
   padding: 0;
-  margin: 1rem 0 0;
+  margin: 0;
 }
 
 nav {
-  height: 15vh;
+  height: 16vh;
   width: 100%;
   position: fixed;
   z-index: 10;
@@ -178,7 +137,7 @@ nav {
 
 nav ul {
   display: flex;
-  margin: -5.8rem 1rem 1rem auto;
+  margin: -5.25rem 1rem 0.25rem auto;
   width: 70%;
 }
 
@@ -203,7 +162,7 @@ nav ul {
   transition: all 0.2s ease;
 }
 
-#searchBtn {
+/* #searchBtn {
   display: none;
   position: absolute;
   top: 8.85rem;
@@ -218,7 +177,7 @@ nav ul {
 
 #searchBtn:hover {
   background: #ffa500
-}
+} */
 
 nav ul li {
   margin: 0 auto;
@@ -659,7 +618,7 @@ span #titleFormat {
 #cta {
   display: block;
   position: absolute;
-  top: 11rem;
+  top: 9rem;
   left: -8rem;
   height: 15rem;
   width: 50rem;
@@ -684,7 +643,7 @@ span #titleFormat {
 #ctaCloseQuote {
   position: absolute;
   top: 5rem;
-  left: 28.5rem;
+  left: 25.5rem;
 }
 
 #section5 h2 {
@@ -796,6 +755,7 @@ form #instructions {
   height: 15vh;
   width: 100%;
   margin: 0 auto;
+  padding-bottom: 5rem;
   background: pink;
 }
 
@@ -832,7 +792,7 @@ footer {
   background: rgba(0, 0, 0, 0.45);
   color: #fff;
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 0;
 }
 
 .footerContainer {
@@ -842,8 +802,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   max-width: 1600px;
-  margin: 0 auto;
-  padding: 0.5rem 0 2rem;
+  margin: 0 4rem;
+  padding: 0;
 }
 
 .footerLinks a {
@@ -867,9 +827,4 @@ footer {
 
 .footerCopyright p {
   font-size: 1rem;
-}
-
-@media screen and (minmax-width: 390px) {
-  /* Mobile styles */
-@import url("mobile-styles.css");
 }
