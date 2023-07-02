@@ -292,7 +292,7 @@
     display: none;
     position: fixed;
     bottom: 5rem;
-    right: 6rem;
+    right: 1rem;
     z-index: 8;
     height: 70px;
     width: 70px;
@@ -589,17 +589,17 @@
     padding: 0.5rem 0 2rem;
   }
 
-  .footerLinks a {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 0;
-    left: 5rem;
-    color: var(--dark-color);
-    cursor: var(--primary-cursor);
-    line-height: 3rem;
-    margin-bottom: 1rem;
-  }
+.footerLinks a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 0;
+  left: 5rem;
+  color: var(--dark-color);
+  cursor: var(--primary-cursor);
+  line-height: 3rem;
+  margin-bottom: 1rem;
+}
 
   .footerSocial a {
     position: relative;
@@ -627,4 +627,3 @@
   }
 
 }
-
