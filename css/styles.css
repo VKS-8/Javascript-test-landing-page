@@ -1089,21 +1089,17 @@ footer {
     width: 50px;
     margin-bottom: 2rem;
     padding: 0.025rem 0 0 0.025rem;
-    /* background: var(--transparent-color-2); */
     font-size: 3rem;
-    /* color: var(--color-1); */
-    /* border: none; */
-    /* border-radius: var(--round-border-radius); */
-    /* cursor: var(--primary-cursor); */
   }
 
   /* Section styles */
 
   section {
     position: relative;
-    height: fit-content;
+    top: 0;
+    height: 100vh;
     width: 90%;
-    margin: 1rem 0 3rem;
+    margin: 0;
     padding: 2rem;
     align-items: center;
     background: var(--transparent-color-4);
@@ -1113,27 +1109,16 @@ footer {
     display: none;
   }
 
-  /* .textContainer h2 { */
-    /* font-size: var(--h2-font-size); */
-    /* padding: 0.5rem 0 2rem; */
-    /* height: auto; */
-    /* width: var(--max-width); */
-    /* margin: 0; */
-    /* color: var(--color-2); */
-    /* line-height: 2rem; */
-  /* } */
+  #section1 .textContainer {
+    position: relative;
+    top: -8rem;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+  }
 
-  /* .textContainer p { */
-    /* line-height: 1.75rem; */
-    /* color: var(--color-1) */
-  /* } */
-
-  /* #section2 h2 { */
-    /* margin-bottom: -1rem; */
-  /* } */
-
-  #section2 {
-    margin-bottom: 5rem;
+  #section2 .textContainer {
+    position: relative;
+    top: -10rem;
   }
 
     #section4 {
@@ -1149,45 +1134,6 @@ footer {
     display: none;
   }
 
-  /* #cta {
-    display: block;
-    position: relative;
-    top: 2rem;
-    left: 0;
-    height: 5rem;
-    width: 70%;
-    margin: 0 auto 3rem;
-    padding: 2rem;
-    font-size: 1.5rem;
-    background: var(--transparent-color-5);
-    border: 5px solid red;
-  } */
-
-  /* #cta .capitalLetter {
-    font-size: 3rem;
-  } */
-
-  /* #ctaTitleFormat {
-    position: absolute;
-    top: 6rem;
-    left: 17rem;
-    margin: 0 auto;
-  }
-
-  #cta .quoteMark {
-    font-size: 3rem;;
-  } */
-
-  /* #ctaCloseQuote {
-    position: absolute;
-    top: 6rem;
-    left: 26.5rem;
-  }
-
-  .spacer {
-    display: none;
-  } */
-
   /* Challenge Section */
 
   #section5 {
@@ -1197,6 +1143,9 @@ footer {
   }
 
   #section5 h2 {
+    position: relative;
+    top: 0;
+    left: -2rem;
     text-align: center;
     margin: 0 auto;
     padding-top: 2rem;
@@ -1205,8 +1154,10 @@ footer {
   }
 
   #section5 p {
+    position: relative;
+    top: 5rem;
+    left: 0;
     margin: 0 auto;
-    /* padding: 1rem; */
     text-align: center;
     background:var(--color-3);
     font-size: var(--primary-font-size);
@@ -1214,31 +1165,36 @@ footer {
   }
 
   #section5 form {
-    /* margin: 2rem 0; */
-    width: 70%;
+    position: relative;
+    top: 8rem;
+    left: 0;
+    margin: 0 auto;
+    width: 90%;
     color: var(--dark-color);
-    /* font-size: var(--primary-font-size); */
+  }
+
+  form #sectionForm {
+    margin: 0;
   }
 
   form #sectionTitle,
   form #sectionContent,
   form #sectionImage {
     display: block;
-    /* margin: 2rem auto; */
+    width: 85%;
     border: var(--primary-aside-border);
+    margin: 2rem auto;
   }
 
   label {
     display: block;
+    margin: 0 auto 1rem;
     text-align: center;
     color: var(--light-color);
-    /* padding: 1rem; */
-
   }
 
   form input {
     height: 3rem;
-    width: 100%;
     margin: 0;
     padding: 1rem;
     border-radius: 10px;
@@ -1246,48 +1202,30 @@ footer {
     color: var(--light-color)
   }
 
-  form input[type=file] {
-    /* height: fit-content; */
-    /* padding: 1.5rem; */
-    /* color: var(--light-color) */
-  }
-
   form textarea {
+    position: relative;
+    top: 0;
+    left: 0;
     height: 15rem;
-    width: 100%;
     background:var(--color-4);
-    /* padding: 2rem; */
-    /* border-radius: var(--secondary-border-radius); */
-    /* font-size: 1.5rem; */
-    /* line-height: 2.5rem; */
     color: var(--light-color)
   }
 
   button[type="submit"] {
-    /* display: block; */
     height: 100px;
     width: 100px;
-    /* margin: 1rem 2rem 4rem auto; */
-    /* padding: 0.25rem; */
-    /* border-radius: var(--round-border-radius); */
-    /* font-size: 1rem; */
-    /* border: 3px solid var(--secondary-background-color); */
-    /* box-shadow: var(--primary-box-shadow); */
-    /* cursor: pointer; */
   }
 
   button[type="submit"]:hover {
     background: var(--transparent-color-3);
-    /* cursor: pointer; */
   }
 
   form #instructions {
-    /* position: relative; */
-    /* top: 0.75rem; */
-    width: 100%;
-    /* margin: 0 auto; */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 85%;
     font-size: 1.5rem;
-    /* text-align: center; */
     line-height: 2rem;
   }
 
@@ -1295,11 +1233,9 @@ footer {
     position: relative;
     top: 0;
     left: 0;
+    margin: 0 auto;
+    font-size: var(--h1-font-size);
     line-height: 3rem;
-    /* width: 100%; */
-    /* margin: 2rem auto; */
-    /* text-align: center; */
-    /* font-size: var(--primary-font-size); */
   }
 
   #challengeContainer {
@@ -1335,10 +1271,7 @@ footer {
     grid-area: description;
     width: 35%;
     margin: 2rem auto;
-    /* font-size: var(--secondary-font-size); */
     text-align: start;
-    /* overflow-wrap: break-word; */
-    /* box-shadow: var(--primary-box-shadow); */
   }
 
   #challengeContainer img {
@@ -1347,36 +1280,21 @@ footer {
     left: 0;
     grid-area: img;
     width: 45%;
-    /* border-radius: var(--secondary-border-radius); */
-    /* box-shadow: var(--primary-box-shadow); */
   }
 
   footer {
-    /* display: block; */
-    /* grid-row: 3; */
-    /* position: sticky; */
-    /* bottom: 0; */
-    /* left: 0; */
-    /* z-index: 5; */
     height: 12vh;
-    /* width: 81.5%; */
     background: var(--transparent-color-3);
     color: var(--dark-color);
-    /* margin: 0 auto; */
-    /* padding: 1rem 5rem; */
   }
 
   .footerContainer {
-    /* align-items: center; */
-    /* width: 100%; */
     margin: 0 auto ;
   }
 
   .footerLinks a {
     color: var(--dark-color);
-    /* cursor: var(--primary-cursor); */
     margin: 0 2rem;
-    /* text-decoration: none; */
   }
 
   .footerLinks a:hover {
@@ -1388,17 +1306,8 @@ footer {
   }
 
   .footerSocial a {
-    /* position: relative; */
-    /* top: -2rem; */
-    /* left: 50%; */
-    /* display: inline; */
-    /* width: 100%; */
     color: var(--dark-color);
-    /* text-decoration: none; */
     margin: 0 3rem;
-    /* padding: 0; */
-    /* text-align: center; */
-    /* cursor: var(--primary-cursor); */
   }
 
   .footerSocial a:hover {
