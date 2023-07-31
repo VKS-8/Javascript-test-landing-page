@@ -1047,7 +1047,7 @@ footer {
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 19.1rem;
+    top: 16.5rem;
     left: 1.5rem;
     margin-top: 0;
     padding: 1rem 0;
@@ -1214,6 +1214,9 @@ footer {
   button[type="submit"] {
     height: 100px;
     width: 100px;
+    position: relative;
+    top: 0;
+    right: 2rem;
   }
 
   button[type="submit"]:hover {
@@ -1247,7 +1250,10 @@ footer {
       "img description";
     gap: 0.5rem;
     z-index: 1;
-    height: fit-content;
+    position: relative;
+    top: 2rem;
+    left: 0;
+    height: 50vh;
     max-width: 100%;
     margin: 1rem 0;
     background: var(--tertiary-background-color);
@@ -1259,6 +1265,7 @@ footer {
     position: relative;
     top: 0;
     left: 0;
+    margin: 0 auto 3rem;
     text-align: center;
     padding: 1rem 0 2rem;
     color: var(--color-5);
