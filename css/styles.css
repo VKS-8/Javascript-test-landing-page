@@ -900,35 +900,17 @@ footer {
   }
 
   body {
-    /* display: grid; */
-    /* grid-template-rows: auto 1fr auto; */
-    /* position: relative; */
-    /* min-height: 100%;  Needed for footer positioning */
     background-color: var(--color-6);
     color: var(--light-font-color);
     max-width: var(--max-width);
-    /* margin: 0 auto; */
-    /* overflow-x: hidden; */
   }
 
   header {
     grid-row: 1;
-    /* position: relative; */
     height: var(--max-height);
     width: var(--max-width);
-    /* padding-top: 6rem; */
     background: var(--color-5);
   }
-
-    /* Boys planting flags */
-    header img {
-      /* object-fit: content; */
-      /* position: absolute; */
-      /* top: 0; */
-      /* left: 0; */
-      /* width: var(--max-width); */
-      /* z-index: 1; */
-    }
 
     h1 {
       position: relative;
@@ -963,20 +945,10 @@ footer {
   /* Styles for the slide-in aside Note: will move to mobile styles */
   #toggleAsideBtn {
     display: block;
-    /* position: relative; */
-    /* top: 20rem; */
-    /* left: 240px; */
     height: 3.5rem;
     width: 3.5rem;
-    /* background: var(--transparent-color-1); */
-    /* border: var(--primary-aside-border); */
-    /* border-radius: var(--secondary-border-radius); */
-    /* box-shadow: var(--primary-box-shadow); */
     font-size: var(--aside-btn-font-size);
-    /* font-weight: var(--bold-font-weight); */
-    /* text-align: center; */
-    /* color: var(--color-2); */
-    /* cursor: var(--primary-cursor); */
+
   }
 
   #toggleAsideBtn:focus {
@@ -996,30 +968,6 @@ footer {
     transition: left 0.3s ease-in-out;
   }
 
-  /* Show the aside */
-  /* .showAside {
-    left: 0;
-  } */
-
-  /* .asideLinks {
-    list-style: none;
-    padding: 2rem;
-  } */
-
-  /* .asideLinks li {
-    margin-bottom: 1.5rem;
-  } */
-
-  /* .asideLinks a {
-    color: var(--color-3);
-    text-decoration: none;
-    padding: 0.5rem;
-  } */
-
-  /* .asideLinks a.active {
-    border: 2px solid var(--color-3);
-  } */
-
   #asideNavDropdown {
     display: none;
     position: relative;
@@ -1030,9 +978,6 @@ footer {
     padding: 0.5rem;
     list-style: none;
     font-size: 0.75em;
-    /* text-align: center; */
-    /* transition: left 0.3s ease-in-out; */
-    /* cursor: pointer; */
   }
 
   #asideNavDropdown a {
