@@ -551,6 +551,7 @@
     margin: 0.5rem auto;
     font-size: var(--secondary-font-size);
     overflow-wrap: break-word;
+    hyphens: manual;
     box-shadow: var(--primary-box-shadow);
   }
 
@@ -589,17 +590,17 @@
     padding: 0.5rem 0 2rem;
   }
 
-.footerLinks a {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 0;
-  left: 5rem;
-  color: var(--dark-color);
-  cursor: var(--primary-cursor);
-  line-height: 3rem;
-  margin-bottom: 1rem;
-}
+  .footerLinks a {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 5rem;
+    color: var(--dark-color);
+    cursor: var(--primary-cursor);
+    line-height: 3rem;
+    margin-bottom: 1rem;
+  }
 
   .footerSocial a {
     position: relative;
@@ -625,5 +626,4 @@
   .footerCopyright p {
     font-size: var(--tertiary-font-size);
   }
-
 }
