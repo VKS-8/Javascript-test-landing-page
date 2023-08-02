@@ -835,7 +835,6 @@ form #instructions {
   max-width: 100vh;
   font-size: 2rem;
   overflow-wrap: break-word;
-  hyphens: manual;
 }
 
 #challengeContainer img {
@@ -1271,5 +1270,561 @@ footer {
     margin: 0;
     text-align: center;
     padding: 0;
+  }
+}
+
+/* Mobile display: 400 x 844 */
+
+@media only screen and (max-width: 500px) {
+
+  :root {
+    --max-width: 100%;
+    --max-height: 844px;
+  }
+
+  body {
+    color: var(--light-font-color);
+    max-width: var(--max-width);
+  }
+
+  header {
+    height: 844px;
+    width: var(--max-width);
+    padding-top: 6rem;
+    background: var(--color-5);
+  }
+
+  /* Boys planting flags */
+  header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--max-width);
+    z-index: 1;
+  }
+
+  h1 {
+    position: relative;
+    left: 0;
+    font-size: var(--h1-font-size);
+    margin: 0 auto 1.5rem;
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* Welcome to.... */
+  #heroText {
+    position: absolute;
+    top: 12rem;
+    left: 0;
+    z-index: 4;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0 2rem;
+    color: var(--dark-font-color);
+    font-size: var(--primary-font-size);
+    line-height: 1.75;
+  }
+
+  .skipLink {
+    display: none;
+  }
+
+  /* Stories of Adventure */
+  nav img {
+    position: relative;
+    top: -3rem;
+    left: -1rem;
+    width: var(--max-width);
+    padding: 0;
+    margin: 0;
+    z-index: 3;
+  }
+
+  nav ul li {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    grid-row: 2;
+    height: auto;
+    width: var(--max-width);
+  }
+
+  /* Styles for the slide-in aside Note: will move to mobile styles */
+  #toggleAsideBtn {
+    position: relative;
+    top: 20rem;
+    left: 240px;
+    height: 3.5rem;
+    width: 3.5rem;
+    background: var(--transparent-color-1);
+    border: var(--primary-aside-border);
+    border-radius: var(--secondary-border-radius);
+    box-shadow: var(--primary-box-shadow);
+    font-size: var(--aside-btn-font-size);
+    font-weight: var(--bold-font-weight);
+    text-align: center;
+    color: var(--color-2);
+    cursor: var(--primary-cursor);
+  }
+
+  #toggleAsideBtn:hover {
+    background: var(--color-4);
+  }
+
+  #toggleAsideBtn:focus {
+    outline: none;
+    border: var(--secondary-aside-border);
+    color: var(--secondary-color);
+  }
+
+  .asideOpened {
+    left: 250px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .openClose {
+    transform: rotateZ(180deg);
+  }
+
+  /* Default styles for the aside */
+  aside {
+    position: fixed;
+    z-index: 7;
+    top: 0;
+    left: -250px;
+    height: 844px;
+    width: 250px;
+    font-size: var(--aside-font-size);
+    background-color: var(--color-2);
+    transition: left 0.3s ease-in-out;
+  }
+
+  /* Show the aside */
+  .showAside {
+    left: 0;
+  }
+
+  .asideLinks {
+    list-style: none;
+    padding: 2rem;
+  }
+
+  .asideLinks li {
+    margin-bottom: 1.5rem;
+  }
+
+  .asideLinks a {
+    color: var(--color-3);
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+
+  .asideLinks a.active {
+    border: 2px solid var(--color-3);
+  }
+
+  #asideNavDropdown {
+    display: none;
+    position: relative;
+    top: -3rem;
+    left: 11rem;
+    width: 21rem;
+    background: var(--transparent-color-4);
+    padding: 0.5rem;
+    list-style: none;
+    font-size: 0.75em;
+    text-align: center;
+    transition: left 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  #asideNavDropdown a {
+    color: var(--light-color);
+  }
+
+  /* Sourced code from this link
+    https://css-tricks.com/solved-with-css-dropdown-menus/ */
+
+  aside ul #asideNavDropdown {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 21.1rem;
+    left: 1.5rem;
+    margin-top: 0;
+    padding: 1rem 0;
+  }
+
+  aside li:hover > #asideNavDropdown,
+  aside li:focus-within > #asideNavDropdown,
+  aside li ul #asideNavDropdown:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    border-top: 10px solid var(--aside-navDropdown-border);
+    transition: all 1s ease;
+  }
+
+  aside li > #asideNavDropdown li:hover {
+    position: relative;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: var(--color-4);
+    padding: 0.5rem 0;
+    transition: all 0.5s ease;
+    box-shadow: var(--primary-box-shadow);
+  }
+
+  aside li > #asideNavDropdown li a:hover {
+    border: none;
+  }
+
+  aside li #asideNavDropdown li {
+    clear: both;
+    width: 100%;
+  }
+
+    /* Add styles for the scroll-to-top button */
+  .scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 5rem;
+    right: 1rem;
+    z-index: 8;
+    height: 70px;
+    width: 70px;
+    padding: 0.25rem 0 0 0.25rem;
+    background: var(--transparent-color-2);
+    font-size: 5rem;
+    color: var(--color-1);
+    border: none;
+    border-radius: var(--secondary-border-radius);
+    cursor: var(--primary-cursor);
+  }
+
+  /* Section styles */
+
+  section {
+    position: relative;
+    height: 900px;
+    width: 100%;
+    margin: 0 auto 6rem;
+    padding: 2rem;
+    align-items: center;
+    background: none;
+  }
+
+  .imageContainer {
+    display: none;
+  }
+
+  div .textContainer {
+    margin: 0;
+    padding: 0;
+  }
+
+  .textContainer h2 {
+    position: relative;
+    top: 0;
+    font-size: var(--h2-font-size);
+    padding: 0.5rem 0 2rem;
+    height: auto;
+    width: 100%;
+    margin: 0;
+    color: var(--dark-font-color);
+    line-height: 2rem;
+  }
+
+  .textContainer p {
+    position: relative;
+    top: 0;
+    width: 80%;
+    line-height: 1.75rem;
+    color: var(--dark-font-color);
+  }
+
+  #section2 h2 {
+    margin-bottom: -1rem;
+  }
+
+  #section4 {
+    width: 100%;
+    padding: 0;
+  }
+
+  #section4 img {
+    width: var(--max-width);
+  }
+
+  #section4 .textOverlay {
+    padding: 0;
+    width: 100%;
+  }
+
+  #section4 p {
+    height: 500px;
+    text-align: center;
+  }
+
+  #bookTitle {
+    display: none;
+    position: relative;
+    top: -2rem;
+    left: 0rem;
+    width: 100%;
+    padding: 0;
+    background: var(--text-container-background-color);
+  }
+
+  #cta {
+    display: block;
+    position: relative;
+    top: 2rem;
+    left: 0;
+    height: 8rem;
+    width: 100%;
+    margin: 0 0 3rem;
+    font-size: 1.5rem;
+    background: var(--transparent-color-5);
+  }
+
+  #cta .capitalLetter {
+    font-size: 3rem;
+  }
+
+  #ctaTitleFormat {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+  }
+
+  #cta .quoteMark {
+    font-size: 3rem;;
+  }
+
+  #ctaCloseQuote {
+    position: absolute;
+    top: 5rem;
+    left: 17.5rem;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  /* Challenge Section */
+  #section5 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  #section5 h2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 90%;
+  }
+
+  #section5 p {
+    margin: 1rem auto;
+    padding: 1rem;
+    text-align: center;
+    background:var(--transparent-color-3);
+    font-size: var(--primary-font-size);
+    line-height: 1.5rem;
+    color: var(--dark-color);
+  }
+
+  #section5 form {
+    position: relative;
+    top: 5rem;
+    left: 0.2rem;
+    margin: 2rem auto;
+    color: var(--dark-color);
+    font-size: var(--primary-font-size);
+  }
+
+  form #sectionTitle,
+  form #sectionContent,
+  form #sectionImage {
+    display: block;
+    margin: 2rem auto;
+    box-shadow: var(--primary-box-shadow);
+  }
+
+  form label {
+    font-size: var(--h2-font-size);
+    color: var(--color-6)
+  }
+
+  form input {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background:var(--secondary-background-color);
+    color: var(--light-color)
+  }
+
+  form textarea {
+    height: 20rem;
+    background:var(--secondary-background-color);
+    padding: 2rem;
+    border-radius: var(--secondary-border-radius);
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    color: var(--light-color)
+  }
+
+  button[type="submit"] {
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin: 0 1rem 5rem auto;
+    padding: 0.25rem;
+    border-radius: var(--round-border-radius);
+    font-size: 1rem;
+    border: 3px solid var(--secondary-background-color);
+    box-shadow: var(--primary-box-shadow);
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background: var(--transparent-color-3);
+  }
+
+  form #instructions {
+    position: relative;
+    top: 0.75rem;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+    color: var(--dark-color);
+  }
+
+  #ctaSection5 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 4.5rem;
+  }
+
+  #challengeContainer {
+    position: relative;
+    top: -3rem;
+    left: 0;
+    z-index: 1;
+    height: auto;
+    max-width: var(--max-width);
+    margin: 0;
+    background: var(--tertiary-background-color);
+  }
+
+  #challengeContainer h2 {
+    position: relative;
+    top: 0;
+    left: -5%;
+    text-align: center;
+    font-size: var(--h2-font-size);
+    margin: 0 auto;
+  }
+
+  #challengeContainer p {
+    position: relative;
+    top: 12rem;
+    left: -5%;
+    margin: 0.5rem auto;
+    font-size: var(--secondary-font-size);
+    overflow-wrap: break-word;
+  }
+
+  #challengeContainer img {
+    position: relative;
+    top: -3rem;
+    left: 22%;
+    border-radius: var(--secondary-border-radius);
+    box-shadow: var(--primary-box-shadow);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    grid-row: 3;
+    position: sticky;
+    bottom: -40rem;
+    left: 0;
+    z-index: 5;
+    height: 50vh;
+    width: var(--max-width);
+    background: var(--transparent-color-3);
+    color: var(--dark-color);
+    margin: 0 auto;
+    padding: 0.5rem 0.5rem 10rem;
+  }
+
+  .footerContainer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.5rem 0 2rem;
+  }
+
+  .footerLinks a {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    left: 150%;
+    color: var(--dark-color);
+    cursor: var(--primary-cursor);
+    line-height: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .footerSocial a {
+    position: relative;
+    top: 19rem;
+    left: -55%;
+    color: var(--dark-color);
+    text-decoration: none;
+    margin: 0 auto;
+    padding: 2rem;
+    cursor: var(--primary-cursor);
+  }
+
+  .footerCopyright {
+    position: relative;
+    top: 15rem;
+    left: 10%;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem auto;
+    line-height: 2rem;
+  }
+
+  .footerCopyright p {
+    font-size: 1rem;
   }
 }
